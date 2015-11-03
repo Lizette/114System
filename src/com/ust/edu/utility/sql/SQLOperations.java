@@ -1,11 +1,13 @@
 package com.ust.edu.utility.sql;
 
 import java.sql.*;
+
 import javax.sql.*;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 import com.ust.edu.utility.sql.SQLCommands;
+import com.ust.edu.model.AddBean;
 import com.ust.edu.model.LabBean;
 
 
@@ -50,6 +52,20 @@ public class SQLOperations implements SQLCommands {
 	}
 	
 
+	public static boolean addNewItem(Connection connection, AddBean add)
+	{
+		try{
+			PreparedStatement pstmt= connection.prepareStatement(INSERT_NEW_ITEM);
+			pstmt.setString(1,add.getItem());
+			pstmt.setString(2,""+add.getQuantity());
+		} catch (SQLException sqle) {
+			System.out.println("SQLException add new item: " + sqle.getMessage());
+			return false; 
+		}	
+		
+		return true;
+	}
+	
 	public static ResultSet getAllStudent(Connection connection) {
 		ResultSet rs = null;
 		try {

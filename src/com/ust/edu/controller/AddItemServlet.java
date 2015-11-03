@@ -13,8 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.ust.edu.model.AddBean;
 import com.ust.edu.utility.sql.SQLOperations;
 
-import edu.ust.erdbms.model.EmployeeBean;
-import edu.ust.erdbms.utility.BeanFactory;
+
 
 /**
  * Servlet implementation class AddItemServlet
@@ -46,14 +45,14 @@ public class AddItemServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String item = request.getParameter("item");
-		String quantity = Integer.parseInt(request.getParameter("quantity"));
+		int quantity = Integer.parseInt(request.getParameter("quantity"));
 
 		AddBean add=  com.ust.edu.utility.BeanFactory.getInstance(item, quantity);
 		
 		if (connection != null) {
-			if (/*SQLOperations.addEmployee(employee, connection)*/){
+			if (SQLOperations.addNewItem(connection, add)){
 				System.out.println("successful insert");
-				request.setAttribute("employee", employee);
+				request.setAttribute("add", add);
 				getServletContext().getRequestDispatcher("/actionstatus.jsp?success=true").forward(request, response);
 			} else {
 				System.out.println("failed insert");
