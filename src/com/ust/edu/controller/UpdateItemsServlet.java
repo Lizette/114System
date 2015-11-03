@@ -47,11 +47,11 @@ public class UpdateItemsServlet extends HttpServlet {
 			if (recordsAffected > 0) {
 				dispatcher = 
 			getServletContext().getRequestDispatcher(
-					"/updateForm.jsp?success=true");
+					"/viewupdate.jsp?success=true");
 			} else {
 				dispatcher = 
 			getServletContext().getRequestDispatcher(
-				"/updateForm.jsp?success=false");
+				"/viewupdate.jsp?success=false");
 			}
 			dispatcher.forward(request, response);		
 		} catch (Exception e) {
