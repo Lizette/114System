@@ -15,9 +15,7 @@ import com.ust.edu.utility.sql.SQLOperations;
 
 
 
-/**
- * Servlet implementation class AddItemServlet
- */
+
 @WebServlet("/addprocess.html")
 public class AddItemServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -35,9 +33,7 @@ public class AddItemServlet extends HttpServlet {
 		}
 	}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request,response);
 	}
@@ -53,10 +49,10 @@ public class AddItemServlet extends HttpServlet {
 			if (SQLOperations.addNewItem(connection, add)){
 				System.out.println("successful insert");
 				request.setAttribute("add", add);
-				getServletContext().getRequestDispatcher("/actionstatus.jsp?success=true").forward(request, response);
+				getServletContext().getRequestDispatcher("/addActionStatus.jsp?success=true").forward(request, response);
 			} else {
 				System.out.println("failed insert");
-				getServletContext().getRequestDispatcher("/actionstatus.jsp?success=false").forward(request, response);
+				getServletContext().getRequestDispatcher("/addActionStatus.jsp?success=false").forward(request, response);
 			}
 		} else {
 			System.out.println("invalid connection");

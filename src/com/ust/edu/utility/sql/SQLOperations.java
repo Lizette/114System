@@ -58,6 +58,7 @@ public class SQLOperations implements SQLCommands {
 			PreparedStatement pstmt= connection.prepareStatement(INSERT_NEW_ITEM);
 			pstmt.setString(1,add.getItem());
 			pstmt.setString(2,""+add.getQuantity());
+			pstmt.executeUpdate();
 		} catch (SQLException sqle) {
 			System.out.println("SQLException add new item: " + sqle.getMessage());
 			return false; 

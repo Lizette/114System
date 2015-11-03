@@ -35,17 +35,21 @@
 	<h2 class="text-center">ChemEng Inventory System</h2>
 	<hr>
 	<div class="row">
-			<form action="process.html" method="post">
+			<form action="addprocess.html" method="post">
 				<div class="row">
 					<div class="col-md-5"><label>Enter Name of Item:</label></div>
-					<div class="col-md-6"><input type="text" name="itemName" class="form-control"></div>
+					<div class="col-md-6"><input type="text" name="item" class="form-control"></div>
 				</div>
 				<div class="row">
 					<div class="col-md-5"><label>Enter Quantity of Item: </label></div>
 					<div class="col-md-6"><input type="text" name="quantity" class="form-control"></div>
 				</div>
+				<input type="submit" value="Add" class="btn btn-primary">
 			</form>
 			<br><br>
+			
+	
+			<hr>
 			<center> <form action="index.jsp" method="post">
 				<div class="row">
 				<div class="col-md-12">
