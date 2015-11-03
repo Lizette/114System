@@ -47,7 +47,7 @@ public class AddItemServlet extends HttpServlet {
 		if (connection != null) {
 			if (SQLOperations.addNewItem(connection, add)){
 				System.out.println("successful insert");
-
+				request.setAttribute("add", add);
 				getServletContext().getRequestDispatcher("/addActionStatus.jsp?success=true").forward(request, response);
 			} else {
 			System.out.println("failed insert");
