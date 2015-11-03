@@ -39,11 +39,19 @@
 	<form action="updateitems.html" method="post">
 	<div class="row">
 		<div class="col-md-12">
-		<p>ID: ${param.id}</p>
-		<p> Item: <input type="text" size="25" name="item" value="${add.item}"/></p>
-		<p> Quantity: <input type="text" size="25" name="quantity" value="${add.quantity}"/></p>
-		<input type="hidden" name="Id" value ="${param.id}"/>
-		<input type="submit" value="Update item"/>
+		<div class="row">
+			<p>ID: ${param.id}</p>
+		</div>
+		<div class="row">
+			<div class="col-md-5"><label>Item:</label></div>
+			<div class="col-md-6"><input type="text" size="25" name="item" value="${add.item}" class="form-control"></div>
+		</div>
+		<div class="row">
+			<div class="col-md-5"><label> Quantity:</label></div>
+			<div class="col-md-6"><input type="text" size="25" name="quantity" value="${add.quantity}" class="form-control"></div>
+		</div>
+		<input type="hidden" name="Id" value ="${param.id}" class="btn btn-primary">
+		<input type="submit" value="Update item" class="btn btn-primary">
 		</div>
 	</div>
 	<br>
