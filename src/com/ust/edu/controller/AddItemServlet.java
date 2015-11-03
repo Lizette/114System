@@ -10,18 +10,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.ust.edu.model.AddBean;
 import com.ust.edu.utility.sql.SQLOperations;
 
+
+
 /**
- * Servlet implementation class ListItemServlet
+ * Servlet implementation class AddItemServlet
  */
-@WebServlet("/ListItem.html")
-public class ListItemServlet extends HttpServlet {
+@WebServlet("/addprocess.html")
+public class AddItemServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
 	Connection connection;
-	/**
-	 * @see Servlet#init(ServletConfig)
-	 */
 	public void init(ServletConfig config) throws ServletException {
 		super.init(config);
 			connection = SQLOperations.getConnection();
@@ -41,11 +42,25 @@ public class ListItemServlet extends HttpServlet {
 		doPost(request,response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String item = request.getParameter("item");
+		int quantity = Integer.parseInt(request.getParameter("quantity"));
+
+		AddBean add=  com.ust.edu.utility.BeanFactory.getInstance(item, quantity);
 		
+		if (connection != null) {
+			if (SQLOperations.addNewItem(connection, add)){
+				System.out.println("successful insert");
+				request.setAttribute("add", add);
+				getServletContext().getRequestDispatcher("/actionstatus.jsp?success=true").forward(request, response);
+			} else {
+				System.out.println("failed insert");
+				getServletContext().getRequestDispatcher("/actionstatus.jsp?success=false").forward(request, response);
+			}
+		} else {
+			System.out.println("invalid connection");
+		}
 	}
 
 }
