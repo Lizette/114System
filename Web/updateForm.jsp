@@ -9,7 +9,7 @@
 <body>
 <form action="updateitems.html" method="post">
 <p> ID: ${param.id}</p>
-<p> Item: <input type="text" size="25" name="item" value="${add.lastName}"/></p>
+<p> Item: <input type="text" size="25" name="item" value="${add.item}"/></p>
 <p> Quantity: <input type="text" size="25" name="quantity" value="${add.quantity}"/></p>
 <input type="hidden" name="Id" value ="${param.id}"/>
 <input type="submit" value="Update item"/>

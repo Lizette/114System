@@ -49,7 +49,7 @@ input {
 			</form>
 			<br>
 
-			<form action="listItem.html" method="post">
+			<form action="listItems.html" method="post">
 				<div class="row">
 					<div class="col-md-12">
 						<input type="submit" value="View all List" class="btn btn-primary">
@@ -62,6 +62,14 @@ input {
 				<div class="row">
 					<div class="col-md-12">
 						<input type="submit" value="Borrow Form" class="btn btn-primary">
+					</div>
+				</div>
+			</form>
+			<br>
+			<form action="updateForm.jsp" method="post">
+				<div class="row">
+					<div class="col-md-12">
+						<input type="submit" value="Update" class="btn btn-primary">
 					</div>
 				</div>
 			</form>

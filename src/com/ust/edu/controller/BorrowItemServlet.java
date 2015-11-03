@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.ust.edu.model.LabBean;
 
 
-@WebServlet("/updateitem.html")
+/*@WebServlet("/updateitem.html")
 public class BorrowItemServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -39,7 +39,7 @@ public class BorrowItemServlet extends HttpServlet {
 			lab.setSection(request.getParameter("section"));
 			lab.setItem(request.getParameter("item"));
 			
-			int recordsAffected = 
+		int recordsAffected = 
 				com.ust.edu.utility.sql.SQLOperations.updateItems(lab, 
 						Integer.parseInt(request.getParameter("Id")), 
 						connection);
@@ -60,4 +60,4 @@ public class BorrowItemServlet extends HttpServlet {
 		} 	
 	}
 
-}
+}*/
