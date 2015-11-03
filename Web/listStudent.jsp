@@ -11,7 +11,7 @@
  body {
   font-family: 'Arial', sans-serif;
   margin: 20px;
-  background-image: url('mrt.jpg');
+  background-image: url('lab.jpg');
   color: #fff;
   }
   
@@ -65,14 +65,6 @@
 	</div>
 	<br>
 		
-	<form action="database.jsp" method="post">
-		<div class="row">
-			<div class="col-md-12">
-				<input type="submit" value="Click here to go back to list of tables" class="btn btn-primary">
-		 	</div>
-		</div>
-	</form>
-	<br>
 	
 	<form action="index.jsp" method="post">
 		<div class="row">

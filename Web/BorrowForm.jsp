@@ -34,7 +34,7 @@
 	<hr>
 	<h2 class="text-center">ChemEng Inventory System</h2>
 	<hr>
-	<div class="row">hi
+	<div class="row">
 		<div class="col-md-7" style="border-right: 2px solid #555; padding: 20px;">
 			<form action="addprocess.html" method="post">
 				<div class="row">
