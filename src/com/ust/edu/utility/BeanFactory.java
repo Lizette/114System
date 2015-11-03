@@ -1,4 +1,5 @@
 package com.ust.edu.utility;
+import com.ust.edu.model.AddBean;
 import com.ust.edu.model.LabBean;
 
 public class BeanFactory {
@@ -13,4 +14,11 @@ public class BeanFactory {
 	      return lab;
 	      
 	    }
+	  
+	  public static AddBean getInstance(String item, int quantity){
+		  AddBean add = new AddBean();
+		  add.setItem(item);
+		  add.setQuantity(quantity);
+		  return add;
+	  }
 }
