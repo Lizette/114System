@@ -32,7 +32,8 @@
 <body bgcolor="#DBFFFF">
 	<div class="box">
 	<hr>
-	<h2 class="text-center">ChemEng Inventory System</h2>
+	<h2 class="text-center">ChemEng Inventory System</h2> 
+	<h2 class="text-center">ChemEng Inventory System</h2> 
 	<hr>
 	<div class="row">hi
 		<div class="col-md-7" style="border-right: 2px solid #555; padding: 20px;">
