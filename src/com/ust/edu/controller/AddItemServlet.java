@@ -21,8 +21,7 @@ public class AddItemServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	Connection connection;
-	public void init(ServletConfig config) throws ServletException {
-		super.init(config);
+	public void init() throws ServletException {
 			connection = SQLOperations.getConnection();
 		
 		if (connection != null) {
@@ -48,11 +47,10 @@ public class AddItemServlet extends HttpServlet {
 		if (connection != null) {
 			if (SQLOperations.addNewItem(connection, add)){
 				System.out.println("successful insert");
-				request.setAttribute("add", add);
-				getServletContext().getRequestDispatcher("/addActionStatus.jsp?success=true").forward(request, response);
+
+				getServletContext().getRequestDispatcher("/addactionstatus.jsp?success=true").forward(request, response);
 			} else {
-				System.out.println("failed insert");
-				getServletContext().getRequestDispatcher("/addActionStatus.jsp?success=false").forward(request, response);
+			System.out.println("failed insert");
 			}
 		} else {
 			System.out.println("invalid connection");
