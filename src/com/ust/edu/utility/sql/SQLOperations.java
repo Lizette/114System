@@ -11,6 +11,7 @@ import com.ust.edu.model.AddBean;
 import com.ust.edu.model.LabBean;
 
 
+
 public class SQLOperations implements SQLCommands {
 	private static Connection connection;
 		
@@ -112,6 +113,32 @@ public class SQLOperations implements SQLCommands {
 				return rs; 
 			}	
 			return rs;
+		}
+		public static int updateItems(AddBean add, 
+				int id, Connection connection) {
+			int updated = 0;
+			try {
+				connection.setAutoCommit(false);
+		        PreparedStatement pstmt = 
+		        	connection.prepareStatement(UPDATE_ITEMS);
+		        pstmt.setString(1, add.getItem()); 
+		        pstmt.setInt(2, add.getQuantity());
+		        pstmt.setInt(3, id); 
+		        updated = pstmt.executeUpdate();   
+		        connection.commit();
+			} catch (SQLException sqle) {
+				System.out.println("SQLException - updateItems: " 
+					+ sqle.getMessage());
+				
+				try {
+					connection.rollback();
+				} catch (SQLException sql) {
+					System.err.println("Error on Update Connection Rollback - " 
+						+ sql.getMessage());
+				}
+				return updated; 
+			}	
+			return updated;
 		}
 		
 }
