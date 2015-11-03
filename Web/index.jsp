@@ -9,7 +9,7 @@
  body {
   font-family: 'Arial', sans-serif;
   margin: 20px;
-  background-image: url('lab.jpg');
+  background-image: url('mrt.jpg');
   color: #fff;
   }
   
@@ -27,99 +27,42 @@
   	margin-top: 5%;
   }
 </style>
-<title>Home</title>
+<title>Tables</title>
 </head>
-<body bgcolor="#DBFFFF">
+<body bgcolor="#DBFFFF"><center>
 	<div class="box">
 	<hr>
-	<h2 class="text-center">ChemEng Inventory System</h2> 
-	<h2 class="text-center">ChemEng Inventory System</h2> 
-	<hr>
-	<div class="row">hi
-		<div class="col-md-7" style="border-right: 2px solid #555; padding: 20px;">
-			<form action="process.html" method="post">
-				<div class="row">
-					<div class="col-md-5"><label>Enter Student's Last Name:</label></div>
-					<div class="col-md-6"><input type="text" name="lastName" class="form-control"></div>
-				</div>
-				<div class="row">
-					<div class="col-md-5"><label>Enter Student's First Name: </label></div>
-					<div class="col-md-6"><input type="text" name="firstName" class="form-control"></div>
-				</div>
-				<div class="row">
-					<div class="col-md-5"><label>Enter Student's Section: </label></div>
-					<div class="col-md-6"><input type="text" name=section class="form-control"></div>
-				</div>
-				<div class="row">
-					<div class="col-md-5">
-						<label>Items to Borrow:</label>
-					</div>
-					<div class="col-md-6">
-					<form role="form">
-					    <div class="checkbox">
-					      <label><input type="checkbox" value="">Option 1</label>
-					    </div>
-					    <div class="checkbox">
-					      <label><input type="checkbox" value="">Option 2</label>
-					    </div>
-					    <div class="checkbox">
-					      <label><input type="checkbox" value="">Option 3</label>
-					    </div>
-					  </form>
-						<br><br>
-						
-						<p>Select Items you OWN</p>
-						<form>
-						<input type="checkbox" name="owns" value="Bike">Bike<br/>
-						<input type="checkbox" name="owns" value="Car">car<br/>
-						<input type="checkbox" name="owns" value="Refridgerator">Refrigerator<br/>
-						<input type="checkbox" name="owns" value="Mobile">Mobile<br/>
-						<input type="checkbox" name="owns" value="Tablet">Tablet<br/>
-						<input type="checkbox" name="owns" value="Computer">Computer<br/>
-						<input type="button" value="Get Values" onclick="getMultipleCheckbox(this.form.owns);"/>
-						</form>
-						<script type="text/javascript">
-						function getMultipleCheckbox(inputdata) {
-						    var selectedItems = [];
-						    var count = 0;
-						    for(var i=0;i<inputdata.length;i++) {
-						        if(inputdata[i].checked) {
-						            selectedItems[count] = inputdata[i].value;
-						            count++;
-						        }
-						    }
-						    for(var loop=0; loop< selectedItems.length; loop++) {
-						        console.log(selectedItems[loop]);
-						    }
-						    return selectedItems;
-						}
-</script>
-						
-					</div>
-					
-					<div class="row">
-						<div class="col-md-5"><label>Enter Quantity of the item to be borrowed: </label></div>
-						<div class="col-md-6"><input type="text" name="item_num" class="form-control"></div>
-					</div>
-					<br><br>
-					<div class="col-md-12">
-							<input type="submit" value="Borrow" class="btn btn-primary">
-					</div>
-				</div>
-			</form>
-		</div>
-		<div class="col-md-5">
-			<h4><strong>List of Laboratory Equipments Available</strong></h4>
-			<p>Option 1</p>
-			<p>Option 2</p>
-			<p>Option 3</p>
-			<p>Option 4</p>
-			<p>Option 5</p>
-			<p>Option 6</p>
-		</div>
-	</div>
 	
+	<h1 class="text-center"><strong>Laboratory:</strong></h1>
+	<h1 class="text-center">Tools & Equipment Inventory</h1>
+	<hr>
+	<form action="addItem.html" method="post">
+		<div class="row">
+			<div class="col-md-12">
+				<input type="submit" value="Add Equipment" class="btn btn-primary">
+		 	</div>
+		</div>
+	</form>
+	<br>
+	
+	<form action="listItem.html" method="post">
+		<div class="row">
+			<div class="col-md-12">
+				<input type="submit" value="View all List" class="btn btn-primary">
+		 	</div>
+		</div>
+	</form>
+	<br>
+	
+	<form action="BorrowForm.jsp" method="post">
+		<div class="row">
+			<div class="col-md-12">
+				<input type="submit" value="Borrow Form" class="btn btn-primary">
+		 	</div>
+		</div>
+	</form>
 	</div>
-
+	</center>
+	
 </body>
 </html>
