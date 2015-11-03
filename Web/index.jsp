@@ -9,7 +9,7 @@
  body {
   font-family: 'Arial', sans-serif;
   margin: 20px;
-  background-image: url('mrt.jpg');
+  background-image: url('lab.jpg');
   color: #fff;
   }
   
@@ -36,7 +36,7 @@
 	<h1 class="text-center"><strong>Laboratory:</strong></h1>
 	<h1 class="text-center">Tools & Equipment Inventory</h1>
 	<hr>
-	<form action="addItem.html" method="post">
+	<form action="addItem.jsp" method="post">
 		<div class="row">
 			<div class="col-md-12">
 				<input type="submit" value="Add Equipment" class="btn btn-primary">
