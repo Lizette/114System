@@ -55,12 +55,12 @@
 					<td><%=rs.getString("TotalNum")%></td>
 					
 					<td align="center">
-					  <a href="updateForm.html?id=<%=rs.getInt("id")%>&action=edit">
+					  <a href="updateForm.jsp?id=<%=rs.getInt("id")%>&action=edit">
 					  	<img src="images/Editor.ico"/>
 					  </a>
 					</td>
 					<td align="center">
-					  <a href="updateForm.html?id=<%=rs.getInt("id")%>&action=delete">
+					  <a href="updateForm.jsp?id=<%=rs.getInt("id")%>&action=delete">
 					  	<img src="images/busy.ico"/>
 					  </a>
 					</td>
