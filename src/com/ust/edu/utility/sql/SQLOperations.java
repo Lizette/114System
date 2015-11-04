@@ -141,6 +141,47 @@ public class SQLOperations implements SQLCommands {
 			}	
 			return updated;
 		}
+		public static synchronized int deleteItems(int id,Connection connection){
+			int updated =0;
+			try{
+				connection.setAutoCommit(false);
+				PreparedStatement pstmt = connection.prepareStatement(DELETE_ITEM);
+		        pstmt.setInt(1, id);             
+		        updated  = pstmt.executeUpdate();
+		        connection.commit();
+			} catch (SQLException sqle) {
+				System.out.println("SQLException - deleteItem: " + sqle.getMessage());
+				try {
+					connection.rollback();
+				} catch (SQLException sql) {
+					System.err.println("Error on Delete Connection Rollback - " + sql.getMessage());
+				}
+				return updated; 
+			}	
+			return updated;
+		}
 		
+		public static AddBean searchItems(int id, 
+				Connection connection) {
+				
+				AddBean add = new AddBean();
+				 
+				try {
+			        PreparedStatement pstmt = 
+			        	connection.prepareStatement(SEARCH_ITEM);
+			        pstmt.setInt(1, id);             
+			        ResultSet rs  = pstmt.executeQuery();
+			        
+			        while (rs.next()) { 
+			        	add.setItem(rs.getString("equipments"));
+			        	add.setQuantity(rs.getInt("totalnum"));
+			        }
+				} catch (SQLException sqle) {
+					System.out.println("SQLException - searchItem: " 
+							+ sqle.getMessage());
+					return add; 
+				}	
+				return add;
+			}
 }
 			

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<jsp:useBean id="rs" type="java.sql.ResultSet" scope="request"/>
+<jsp:useBean id="recordStudent" type="java.sql.ResultSet" scope="request"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -49,20 +49,20 @@
 			</tr>
 		
 			<% 
-				while(rs.next()) {	
+				while(recordStudent.next()) {	
 			%>
 				<tr>
-					<td><%=rs.getInt("id")%></td>
-					<td><%=rs.getString("equipments")%></td>
-					<td><%=rs.getString("TotalNum")%></td>
+					<td><%=recordStudent.getInt("id")%></td>
+					<td><%=recordStudent.getString("equipments")%></td>
+					<td><%=recordStudent.getString("TotalNum")%></td>
 					
 					<td align="center">
-					  <a href="updateForm.html?id=<%=rs.getInt("id")%>&action=edit">
+					  <a href="maintenanceitems.html?id=<%=recordStudent.getInt("id")%>&action=edit">
 					  	<img src="images/Editor.ico"/>
 					  </a>
 					</td>
 					<td align="center">
-					  <a href="updateForm.html?id=<%=rs.getInt("id")%>&action=delete">
+					  <a href="maintenanceitems.html?id=<%=recordStudent.getInt("id")%>&action=delete">
 					  	<img src="images/busy.ico"/>
 					  </a>
 					</td>

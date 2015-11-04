@@ -42,7 +42,7 @@ public class ListItemServlet extends HttpServlet {
 		try {	
 			if (connection != null) {
 				ResultSet rs = SQLOperations.getAllItems(connection); 			
-				request.setAttribute("rs", rs);
+				request.setAttribute("recordStudent", rs);
 				getServletContext().getRequestDispatcher("/listItems.jsp")
 					.forward(request, response);
 			} else {

@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     
-<jsp:useBean id="recordEarning" type="java.sql.ResultSet" scope="request"/>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -40,8 +39,8 @@
 	<div class="row">
 		<div class="col-md-12">
 		<p>ID: ${param.id}</p>
-		<p> Item: <input type="text" size="25" name="item" value="${add.item}"/></p>
-		<p> Quantity: <input type="text" size="25" name="quantity" value="${add.quantity}"/></p>
+		<p> Item: <input type="text" size="25" name="item" value="${studentRec.item}"/></p>
+		<p> Quantity: <input type="text" size="25" name="quantity" value="${studentRec.quantity}"/></p>
 		<input type="hidden" name="Id" value ="${param.id}"/>
 		<input type="submit" value="Update item"/>
 		</div>
