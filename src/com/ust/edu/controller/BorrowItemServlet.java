@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.ust.edu.model.LabBean;
 
-
-/*@WebServlet("/updateitem.html")
+/*
+@WebServlet("/updateitem.html")
 public class BorrowItemServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

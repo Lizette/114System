@@ -58,7 +58,7 @@ input {
 			</form>
 			<br>
 
-			<form action="BorrowForm.jsp" method="post">
+			<form action="borrowform.html" method="post">
 				<div class="row">
 					<div class="col-md-12">
 						<input type="submit" value="Borrow Form" class="btn btn-primary">
