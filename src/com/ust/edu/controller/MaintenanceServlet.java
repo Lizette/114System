@@ -39,7 +39,7 @@ public class MaintenanceServlet extends HttpServlet {
 				int id = Integer.parseInt(request.getParameter("id"));
 				AddBean add = 
 				  com.ust.edu.utility.sql.SQLOperations.searchItems(id, connection);
-				request.setAttribute("studentRec", add);
+				request.setAttribute("add", add);
 				dispatcher = 
 				 getServletContext().getRequestDispatcher("/updateForm.jsp");
 			} else if (request.getParameter("action").equals("delete")){

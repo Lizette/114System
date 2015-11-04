@@ -42,13 +42,6 @@
 	<form action="updateitems.html" method="post">
 	<div class="row">
 		<div class="col-md-12">
-<<<<<<< HEAD
-		<p>ID: ${param.id}</p>
-		<p> Item: <input type="text" size="25" name="item" value="${studentRec.item}"/></p>
-		<p> Quantity: <input type="text" size="25" name="quantity" value="${studentRec.quantity}"/></p>
-		<input type="hidden" name="Id" value ="${param.id}"/>
-		<input type="submit" value="Update item"/>
-=======
 		<div class="row">
 			<p>ID: ${param.id}</p>
 		</div>
@@ -62,7 +55,7 @@
 		</div>
 		<input type="hidden" name="Id" value ="${param.id}" class="btn btn-primary">
 		<input type="submit" value="Update item" class="btn btn-primary">
->>>>>>> origin/master
+
 		</div>
 	</div>
 	<br>

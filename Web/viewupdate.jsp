@@ -43,7 +43,7 @@
 	</div>
 	<br>
 	
-	<form action="updateForm.jsp" method="post">
+	<form action="index.jsp" method="post">
 		<div class="row">
 			<div class="col-md-12">
 				<input type="submit" value="Return" class="btn btn-primary">
