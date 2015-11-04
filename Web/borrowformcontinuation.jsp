@@ -11,10 +11,15 @@
 <body>
 <h1>HOW MANY ITEMS WOULD YOU WANT TO BORROW FOR</h1>
 <form action="updateborrowstable.html">
-<%for(int x=0;x<items.length;x++){ %>
-<p><%=items[x].getItem()%><input name="quantity"/></p>
+<input type="hidden" name="lastName" value="${lab.lastName}"/>
+<input type="hidden" name="firstName" value="${lab.firstName}"/>
+<input type="hidden" name="section" value="${lab.section}"/>
 
+<%for(int x=0;x<items.length;x++){ %>
+<input type="hidden" name="itemID" value="<%=items[x].getItem()%>"/>
+<p><%=items[x].getItem()%><input name="quantity"/></p>
 <%}%>
+
 <input type="submit"/>
 </form>
 </body>
