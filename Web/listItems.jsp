@@ -43,6 +43,8 @@
 				<th align="center">ID</th>
 			<th align="center">Equipment</th>
 			<th align="center">TotalNum</th>
+			<th align="center">Edit</th>
+			<th align="center">Delete</th>
 
 			</tr>
 		
