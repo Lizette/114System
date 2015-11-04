@@ -57,12 +57,20 @@
 					<td><%=recordStudent.getString("TotalNum")%></td>
 					
 					<td align="center">
+<<<<<<< HEAD
 					  <a href="maintenanceitems.html?id=<%=recordStudent.getInt("id")%>&action=edit">
+=======
+					  <a href="updateForm.jsp?id=<%=rs.getInt("id")%>&action=edit">
+>>>>>>> origin/master
 					  	<img src="images/Editor.ico"/>
 					  </a>
 					</td>
 					<td align="center">
+<<<<<<< HEAD
 					  <a href="maintenanceitems.html?id=<%=recordStudent.getInt("id")%>&action=delete">
+=======
+					  <a href="updateForm.jsp?id=<%=rs.getInt("id")%>&action=delete">
+>>>>>>> origin/master
 					  	<img src="images/busy.ico"/>
 					  </a>
 					</td>

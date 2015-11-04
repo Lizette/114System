@@ -39,9 +39,13 @@ public class AddItemServlet extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try{
 		String item = request.getParameter("item");
-		int quantity = Integer.parseInt(request.getParameter("quantity"));
-
+		int quantity;
+		
+			quantity = Integer.parseInt(request.getParameter("quantity"));
+		
+		
 		AddBean add=  com.ust.edu.utility.BeanFactory.getInstance(item, quantity);
 		
 		if (connection != null) {
@@ -50,10 +54,14 @@ public class AddItemServlet extends HttpServlet {
 				request.setAttribute("add", add);
 				getServletContext().getRequestDispatcher("/addActionStatus.jsp?success=true").forward(request, response);
 			} else {
+				getServletContext().getRequestDispatcher("/addActionStatus.jsp?success=false").forward(request, response);
 			System.out.println("failed insert");
 			}
 		} else {
 			System.out.println("invalid connection");
+		}
+		}catch(Exception e){
+			getServletContext().getRequestDispatcher("/addActionStatus.jsp?success=false").forward(request, response);
 		}
 	}
 

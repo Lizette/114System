@@ -12,6 +12,7 @@ import com.ust.edu.model.LabBean;
 
 
 
+
 public class SQLOperations implements SQLCommands {
 	private static Connection connection;
 		
@@ -35,7 +36,28 @@ public class SQLOperations implements SQLCommands {
 	public static Connection getConnection() {
 		return (connection!=null)?connection:getDBConnection();
 	}
-	
+	public static AddBean searchEmployee(int id, 
+			Connection connection) {
+			
+			AddBean add= new AddBean();
+			 
+			try {
+		        PreparedStatement pstmt = 
+		        	connection.prepareStatement(SEARCH_ITEM);
+		        pstmt.setInt(1, id);             
+		        ResultSet rs  = pstmt.executeQuery();
+		        
+		        while (rs.next()) { 
+		        	add.setItem(rs.getString("equipments"));
+		        	add.setQuantity(rs.getInt("quantity"));
+		        }
+			} catch (SQLException sqle) {
+				System.out.println("SQLException - searchEmployee: " 
+						+ sqle.getMessage());
+				return add; 
+			}	
+			return add;
+		}
 	public static boolean addStudent(LabBean lab,Connection connection) {
 		
 		try {
