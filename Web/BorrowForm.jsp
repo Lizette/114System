@@ -39,7 +39,7 @@ input {
 		<div class="row">
 			<div class="col-md-7"
 				style="border-right: 2px solid #555; padding: 20px;">
-				<form action="addprocess.html" method="post">
+				<form action="borrowformcontinuation.html" method="post">
 					<div class="row">
 						<div class="col-md-5">
 							<label>Enter Student's Last Name:</label>
@@ -74,12 +74,12 @@ input {
 							%>
 							<div class="checkbox">
 								<label>
-								<input type="checkbox" name="borrowed"
-									value=<%=items.getString("id")%>><%=items.getString("equipments")%></label>
+								<p><input type="checkbox" name="borrowed"
+									value=<%=items.getString("id")%>><%=items.getString("equipments")%></label></p>
 									<%while(items.next()){ %>
 									<label>
-								<input type="checkbox" name="borrowed"
-									value=<%=items.getString("id")%>><%=items.getString("equipments")%></label>
+								<p><input type="checkbox" name="borrowed"
+									value=<%=items.getString("id")%>><%=items.getString("equipments")%></label></p>
 							
 							<%
 									}}else{

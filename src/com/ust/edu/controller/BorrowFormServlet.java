@@ -12,9 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.ust.edu.utility.sql.SQLOperations;
 
-/**
- * Servlet implementation class BorrowFormServlet
- */
 @WebServlet("/borrowform.html")
 public class BorrowFormServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

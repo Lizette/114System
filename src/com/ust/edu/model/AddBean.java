@@ -3,6 +3,7 @@ package com.ust.edu.model;
 public class AddBean {
 	String item;
 	int quantity;
+	int id;
 	public String getItem() {
 		return item;
 	}
@@ -14,6 +15,12 @@ public class AddBean {
 	}
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	

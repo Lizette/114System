@@ -7,7 +7,7 @@ public interface SQLCommands {
 	String UPDATE_ITEMS = "update item set equipments= ?, totalnum = ? where id = ?";
 	String GET_ALL_ITEMS = "select * from item order by equipments asc ";
 	String INSERT_NEW_ITEM = "insert into item(equipments, totalnum) values(?,?);";
-
+	String FIND_ITEM="select * from item where equipments=?";
 	String DELETE_ITEM = "delete from item where id=?";
 	String SEARCH_ITEM = "select * from item where id=?";
 

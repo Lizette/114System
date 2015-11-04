@@ -12,16 +12,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.ust.edu.model.LabBean;
+import com.ust.edu.utility.sql.SQLOperations;
 
-/*
 @WebServlet("/updateitem.html")
 public class BorrowItemServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private Connection connection; 
 	public void init() throws ServletException {
-		connection = (Connection) 
-				getServletContext().getAttribute("dbConnection");
+		connection = SQLOperations.getConnection();
 	}
 
 	
