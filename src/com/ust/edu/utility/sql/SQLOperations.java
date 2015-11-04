@@ -195,6 +195,7 @@ public class SQLOperations implements SQLCommands {
 			        ResultSet rs  = pstmt.executeQuery();
 			        
 			        while (rs.next()) { 
+			        	add.setId(Integer.parseInt(rs.getString("id")));
 			        	add.setItem(rs.getString("equipments"));
 			        	add.setQuantity(rs.getInt("totalnum"));
 			        }
@@ -204,6 +205,24 @@ public class SQLOperations implements SQLCommands {
 					return add; 
 				}	
 				return add;
+			}
+		
+		public static ResultSet findItem(int id, 
+				Connection connection) {
+		
+				 
+				try {
+			        PreparedStatement pstmt = 
+			        	connection.prepareStatement(SEARCH_ITEM,ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+			        pstmt.setInt(1, id);             
+			        ResultSet rs  = pstmt.executeQuery();
+			        return rs;
+				} catch (SQLException sqle) {
+					System.out.println("SQLException - searchItem: " 
+							+ sqle.getMessage());
+					return null; 
+				}	
+				
 			}
 }
 			
