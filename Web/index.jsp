@@ -66,13 +66,13 @@ input {
 				</div>
 			</form>
 			<br>
-			<form action="updateForm.jsp" method="post">
+			<!-- <form action="updateForm.jsp" method="post">
 				<div class="row">
 					<div class="col-md-12">
 						<input type="submit" value="Update" class="btn btn-primary">
-					</div>
+					</div> 
 				</div>
-			</form>
+			</form>-->
 		</div>
 	</center>
 

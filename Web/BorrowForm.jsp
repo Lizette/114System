@@ -28,6 +28,9 @@ input {
 	background-color: rgba(0, 0, 0, 0.8);
 	margin-top: 5%;
 }
+.checkbox {
+	overflow-y:scroll;	
+}
 </style>
 <title>Home</title>
 </head>
@@ -61,14 +64,18 @@ input {
 							<label>Enter Student's Section: </label>
 						</div>
 						<div class="col-md-6">
-							<input type="text" name=section class="form-control">
+							<input type="text" name="section" class="form-control">
 						</div>
 					</div>
+					<hr>
+					<div class="box"> 
+					<p> Rules and Regulations in Borrowing Laboratory Equipments</div>
+				</div>
 					<div class="row">
 						<div class="col-md-5">
 							<label>Items to Borrow:</label>
 						</div>
-						<div class="col-md-6"><!-- dito ineenumerate ang mga available items -->
+						<div class="col-md-5"><!-- dito ineenumerate ang mga available items -->
 							<%
 								if (items.next()) {
 							%>
@@ -87,8 +94,9 @@ input {
 							YOU HAVE NO ITEMS IN YOUR INVENTORY
 							<%} %>
 							</div><input type="submit" value="Borrow" class="btn btn-primary">
-							</form></div>
-							<a href="index.jsp">BACK TO INDEX</a>
+							</div> </form>
+							</div>
+							
 							<!--  
 					    <div class="checkbox">
 					      <label><input type="checkbox" value="">Option 2</label>
@@ -126,7 +134,7 @@ input {
 						}
 </script> -->
 
-						</div>
+					
 						<!-- 
 					<div class="row">
 						<div class="col-md-5"><label>Enter Quantity of the item to be borrowed: </label></div>
@@ -149,9 +157,19 @@ input {
 				<p>Option 5</p>
 				<p>Option 6</p>
 			</div> -->
+			
 		</div>
+		<center>
+			<form action="index.jsp">
+				<div class="row">
+						<div class="col-md-12">
+							<input type="submit" value="BACK TO HOME" class="btn btn-primary">
+						</div> 
+				</div>
+			</form>
+			</center>
 
-	</div>
+
 
 </body>
 </html>
