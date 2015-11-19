@@ -38,30 +38,17 @@ input {
 		<h2 class="text-center">How many items would you want to borrow?</h2>
 		<hr>
 		<center><div class="row">
-			<div class="col-md-12">
+		<form action="updateborrowtable.html" method="post">
+			
 				<!--style="border-right: 2px solid #555; padding: 20px;">-->
-				<form action="updateborrowtable.html" method="post">
-					<div class="row">
-						<!-- <div class="col-md-5">-->
-						</div>
-						<div class="col-md-6">
+				
+					
 							<input type="hidden" name="lastName" class="form-control" value="${lab.lastName}">
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-5">
-						</div>
-						<div class="col-md-6">
+						
 							<input type="hidden" name="firstName" class="form-control" value="${lab.firstName}">
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-5">
-						</div>
-						<div class="col-md-6">
+						
 							<input type="hidden" name="section" class="form-control" value="${lab.section}">
-						</div>
-					</div>
+						
 					<div class="row">
 						
 						<!--  <div class="col-md-">-->
@@ -85,7 +72,7 @@ input {
 							<center><div class="row">
 							<div class="col-md-12">
 							</div><input type="submit" value="submit" class="btn btn-primary">
-							</form></div><br></center>
+						</div></center></div></form></center>
 							
 							<form action="index.jsp">
 							<div class="row">
@@ -97,7 +84,6 @@ input {
 							
 		</div>
 
-	</div>
-</center></div>
+
 </body>
 </html>

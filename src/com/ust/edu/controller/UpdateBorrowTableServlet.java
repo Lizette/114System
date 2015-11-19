@@ -20,7 +20,7 @@ public class UpdateBorrowTableServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     Connection connection;
     public void init(){
-    	SQLOperations.getConnection();
+    	connection=SQLOperations.getConnection();
     }
 
 	/**
@@ -38,12 +38,19 @@ public class UpdateBorrowTableServlet extends HttpServlet {
 		String firstName=request.getParameter("firstName");
 		String lastName= request.getParameter("lastName");
 		String section=request.getParameter("section");
+		for(String x:itemID){System.out.println(x);}
+		for(String x:itemName){System.out.println(x);}
 		
 		for(int x=0;x<itemID.length;x++){
 			ItemBean itemBean = SQLOperations.searchItems(Integer.parseInt(itemID[x]), connection);
+			itemBean.setQuantity(itemBean.getQuantity()-Integer.parseInt(quantity[x]));
+			SQLOperations.updateItems(itemBean,itemBean.getId(), connection);
 			
-			LabBean bean=BeanFactory.getInstance(lastName, firstName, section, Integer.parseInt(itemID[x]), itemName[x], Integer.parseInt(quantity[x]));		
+			LabBean lab=BeanFactory.getInstance(lastName, firstName, section, Integer.parseInt(itemID[x]), itemName[x], Integer.parseInt(quantity[x]));
+			SQLOperations.addStudent(lab, connection);
 		}
+		
+		getServletContext().getRequestDispatcher("/liststudent.html").forward(request, response);
 	}
 
 }

@@ -61,12 +61,18 @@ public class SQLOperations implements SQLCommands {
 	
 	public static boolean addStudent(LabBean lab,Connection connection) {
 		
-		try {
+		try {//"insert into student(LastName, FirstName, Section,itemID, ItemBorrowed, quantity,Returned,timeIN)"
+				//+ " values(?,?,?,?,?,?,?,?,?,?,?)";
 	        PreparedStatement pstmt = connection.prepareStatement(INSERT_STUDENT);
 	        pstmt.setString(1, lab.getLastName()); 
 	        pstmt.setString(2, lab.getFirstName());
 	        pstmt.setString(3, lab.getSection());
-	        pstmt.setString(4, lab.getItem());            
+	        pstmt.setInt(4, lab.getItemID()); 
+	        pstmt.setString(5, lab.getItem());
+	        pstmt.setInt(6, lab.getItemQuantity());
+	        pstmt.setString(7, "FALSE");
+	        pstmt.setDate(8, new java.sql.Date(new java.util.Date().getTime()));
+	        
 	        pstmt.executeUpdate();
 		} catch (SQLException sqle) {
 			System.out.println("SQLException insert student: " + sqle.getMessage());

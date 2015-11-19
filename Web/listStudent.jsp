@@ -45,7 +45,10 @@
 					<th align="center">First Name</th>
 					<th align="center">Section</th>
 					<th align="center">Items</th>
-		
+					<th align="center">Quantity</th>
+					<th align="center">Date Borrowed</th>
+					<th align="center">Date Returned</th>
+					<th align="center">Returned?</th>
 				</tr>
 				
 					<% 
@@ -56,7 +59,15 @@
 							<td><%=recordStudent.getString("LastName")%></td>
 							<td><%=recordStudent.getString("FirstName")%></td>
 							<td><%=recordStudent.getString("Section")%></td>
-							<td><%=recordStudent.getInt("Items")%></td>
+							<td><%=recordStudent.getString("itemborrowed")%></td>
+							<td><%=recordStudent.getInt("quantity")%></td>
+							<td><%=recordStudent.getDate("timein")%></td>
+							<td><%=recordStudent.getDate("timeout")%></td>
+							<td>
+							<%if(recordStudent.getString("returned").equals("FALSE")){%>
+							NOT YET
+							<%} %>
+							</td>
 						</tr>			
 			<% } %>
 				

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.ust.edu.utility.sql.SQLOperations;
 
 
-@WebServlet("/list.html")
+@WebServlet("/liststudent.html")
 public class ListStudentServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
