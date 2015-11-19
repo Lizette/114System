@@ -18,8 +18,8 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/ICS113_WebApp/apache-tomcat-7.0.57/lib/servlet-api.jar"/>
-	<classpathentry kind="lib" path="/Users/lizette/Documents/3rd yr 1st Sem/CS114/installers/mysql-connector-java-5.1.36/mysql-connector-java-5.1.36-bin.jar">
+	<classpathentry kind="lib" path="C:/Users/Jude/Desktop/ICS114/114System/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jude/Desktop/ICS114/114System/mysql-connector-java-5.1.36-bin.jar">
 		<attributes>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>

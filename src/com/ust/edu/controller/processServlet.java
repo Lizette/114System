@@ -56,7 +56,7 @@ public Connection connection;
 						+ "<form action = 'index.jsp' method = 'post'>"
 						+ "<p><input type='submit' value='Go Back'/></p></form>");
 			}  else {
-				LabBean lab = BeanFactory.getInstance(lastName, firstName, section, item);
+				//LabBean lab = BeanFactory.getInstance(lastName, firstName, section, item);
 				request.setAttribute("lab", lab); 
 			}
 				/*if (connection != null) {

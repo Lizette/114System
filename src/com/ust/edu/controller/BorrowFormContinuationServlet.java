@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ust.edu.model.AddBean;
+import com.ust.edu.model.ItemBean;
 import com.ust.edu.model.LabBean;
 import com.ust.edu.utility.sql.SQLOperations;
 
@@ -38,6 +38,8 @@ public class BorrowFormContinuationServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
+		
+		//parang dito muna temp na ilalagay yung mga info na nailagay
 		LabBean lab = new LabBean();
 		lab.setLastName(request.getParameter("lastName"));
 		lab.setFirstName(request.getParameter("firstName"));
@@ -45,12 +47,15 @@ public class BorrowFormContinuationServlet extends HttpServlet {
 		lab.setItem(request.getParameter("item"));
 		request.setAttribute("lab", lab);
 		
+		//kinukuha ang mga id ng mga items na kukunin
 		String itemsID[] = request.getParameterValues("borrowed");
 		
-		AddBean[] addBeanArray = new AddBean[itemsID.length]; 
-		for (int x=0;x<itemsID.length;x++) {
+		//bale eto yung array na lalagyan ng mga info ng mga iboborrow
+		ItemBean[] addBeanArray = new ItemBean[itemsID.length];
 		
-			AddBean currentItem = com.ust.edu.utility.sql.SQLOperations.searchItems(Integer.parseInt(itemsID[x]), connection);
+		//sesearch kada isa na nacheck
+		for (int x=0;x<itemsID.length;x++) {
+			ItemBean currentItem = SQLOperations.searchItems(Integer.parseInt(itemsID[x]), connection);
 			addBeanArray[x] = currentItem;
 		}
 			request.setAttribute("items", addBeanArray);
@@ -60,19 +65,6 @@ public class BorrowFormContinuationServlet extends HttpServlet {
 		}
 
 	
-	protected void addToResultSet(AddBean currentItem,ResultSet items){
-		try {
-			items.moveToInsertRow();
-			items.updateString("equipments",currentItem.getItem() ); // updates the
-			items.updateInt("totalnum",currentItem.getQuantity() ); // updates the second column to be 35
-			items.insertRow();
-			items.moveToCurrentRow();
-			System.out.print("row INSERTED");
-		} catch (SQLException e) {
-			System.out.print("add row error");
-			e.printStackTrace();
-		}
-		
-	}
+	
 
 }

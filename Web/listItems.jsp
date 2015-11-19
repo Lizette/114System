@@ -38,6 +38,7 @@
 <hr>
 	<div class="row">
 		<div class="col-md-12">
+		<!-- TABLE NG LISTAHAN NG LAMAN NG INVENTORY -->
 		<table class="table table-bordered">
 			<tr>
 				<th align="center">ID</th>
@@ -57,11 +58,13 @@
 					<td><%=recordStudent.getString("TotalNum")%></td>
 					
 					<td align="center">
+					<!-- KUNG TRIP IUPDATE ANG INFO ABOUT SA INVENTORY -->
 					  <a href="maintenanceitems.html?id=<%=recordStudent.getInt("id")%>&action=edit">
 					  	<img src="images/Editor.ico"/>
 					  </a>
 					</td>
 					<td align="center">
+					<!-- KUNG TRIP IDELETE ANG ITEM -->
 					  <a href="maintenanceitems.html?id=<%=recordStudent.getInt("id")%>&action=delete">
 					  	<img src="images/busy.ico"/>
 					  </a>

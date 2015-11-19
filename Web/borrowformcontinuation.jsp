@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="com.ust.edu.model.AddBean" %>
-<% AddBean items[] = (AddBean[]) request.getAttribute("items"); %>
+<%@ page import="com.ust.edu.model.ItemBean" %>
+<% ItemBean items[] = (ItemBean[]) request.getAttribute("items"); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -40,7 +40,7 @@ input {
 		<center><div class="row">
 			<div class="col-md-12">
 				<!--style="border-right: 2px solid #555; padding: 20px;">-->
-				<form action="updateborrowstable.html" method="post">
+				<form action="updateborrowtable.html" method="post">
 					<div class="row">
 						<!-- <div class="col-md-5">-->
 						</div>
@@ -67,13 +67,16 @@ input {
 						<!--  <div class="col-md-">-->
 							<%
 								for(int x=0;x<items.length;x++){ %>
+								<!-- pinapakita yung mga naselect na items, nasa itemID yung mga id na binaborrow -->
 								<div class="row">
-									<input type="hidden" name="itemID" value="<%=items[x].getItem()%>"/>
+									<input type="hidden" name="itemID" value="<%=items[x].getId()%>"/>
+									<input type="hidden" name="itemName" value="<%=items[x].getItem()%>"/>
 									<div class= "col-md-7"> 
 									<label><p><Strong><%=items[x].getItem()%>:</Strong></label>
 									</div>
 									<div class="col-md-2">
-									<input type="text" name="quantity" class="form-control"/>
+									<!-- ginawa kong max yung current na laman, para hindi lumagpas -->
+									<input type="number" name="quantity" max="<%=items[x].getQuantity()%>" min="1" required="required" class="form-control"/>
 									</div>
 								</div>
 							<%}
@@ -82,7 +85,7 @@ input {
 							<center><div class="row">
 							<div class="col-md-12">
 							</div><input type="submit" value="submit" class="btn btn-primary">
-							</form></div><br>
+							</form></div><br></center>
 							
 							<form action="index.jsp">
 							<div class="row">
@@ -95,6 +98,6 @@ input {
 		</div>
 
 	</div>
-
+</center></div>
 </body>
 </html>

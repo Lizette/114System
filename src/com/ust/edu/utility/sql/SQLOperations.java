@@ -7,7 +7,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 import com.ust.edu.utility.sql.SQLCommands;
-import com.ust.edu.model.AddBean;
+import com.ust.edu.model.ItemBean;
 import com.ust.edu.model.LabBean;
 
 
@@ -36,10 +36,10 @@ public class SQLOperations implements SQLCommands {
 	public static Connection getConnection() {
 		return (connection!=null)?connection:getDBConnection();
 	}
-	public static AddBean searchEmployee(int id, 
+	public static ItemBean searchEmployee(int id, 
 			Connection connection) {
 			
-			AddBean add= new AddBean();
+			ItemBean add= new ItemBean();
 			 
 			try {
 		        PreparedStatement pstmt = 
@@ -58,6 +58,7 @@ public class SQLOperations implements SQLCommands {
 			}	
 			return add;
 		}
+	
 	public static boolean addStudent(LabBean lab,Connection connection) {
 		
 		try {
@@ -75,7 +76,7 @@ public class SQLOperations implements SQLCommands {
 	}
 	
 
-	public static boolean addNewItem(Connection connection, AddBean add)
+	public static boolean addNewItem(Connection connection, ItemBean add)
 	{
 		try{
 			PreparedStatement pstmt= connection.prepareStatement(INSERT_NEW_ITEM);
@@ -137,7 +138,7 @@ public class SQLOperations implements SQLCommands {
 			}	
 			return rs;
 		}
-		public static int updateItems(AddBean add, 
+		public static int updateItems(ItemBean add, 
 				int id, Connection connection) {
 			int updated = 0;
 			try {
@@ -163,6 +164,7 @@ public class SQLOperations implements SQLCommands {
 			}	
 			return updated;
 		}
+		
 		public static synchronized int deleteItems(int id,Connection connection){
 			int updated =0;
 			try{
@@ -183,10 +185,10 @@ public class SQLOperations implements SQLCommands {
 			return updated;
 		}
 		
-		public static AddBean searchItems(int id, 
+		public static ItemBean searchItems(int id, 
 				Connection connection) {
 				
-				AddBean add = new AddBean();
+				ItemBean add = new ItemBean();
 				 
 				try {
 			        PreparedStatement pstmt = 
@@ -207,22 +209,6 @@ public class SQLOperations implements SQLCommands {
 				return add;
 			}
 		
-		public static ResultSet findItem(int id, 
-				Connection connection) {
 		
-				 
-				try {
-			        PreparedStatement pstmt = 
-			        	connection.prepareStatement(SEARCH_ITEM,ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-			        pstmt.setInt(1, id);             
-			        ResultSet rs  = pstmt.executeQuery();
-			        return rs;
-				} catch (SQLException sqle) {
-					System.out.println("SQLException - searchItem: " 
-							+ sqle.getMessage());
-					return null; 
-				}	
-				
-			}
 }
 			

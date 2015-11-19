@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ust.edu.model.AddBean;
+import com.ust.edu.model.ItemBean;
 import com.ust.edu.utility.sql.SQLOperations;
 
 
@@ -37,7 +37,7 @@ public class MaintenanceServlet extends HttpServlet {
 			RequestDispatcher dispatcher = null; 
 			if (request.getParameter("action").equals("edit")) {
 				int id = Integer.parseInt(request.getParameter("id"));
-				AddBean add = 
+				ItemBean add = 
 				  com.ust.edu.utility.sql.SQLOperations.searchItems(id, connection);
 				request.setAttribute("add", add);
 				dispatcher = 

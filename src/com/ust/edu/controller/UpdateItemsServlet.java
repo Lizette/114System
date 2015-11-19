@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ust.edu.model.AddBean;
+import com.ust.edu.model.ItemBean;
+import com.ust.edu.utility.sql.SQLOperations;
 
 
 
@@ -33,13 +34,12 @@ public class UpdateItemsServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		RequestDispatcher dispatcher = null; 
 		try {
-			AddBean add = new AddBean();
+			ItemBean add = new ItemBean();
 			add.setItem(request.getParameter("item"));
 			add.setQuantity(Integer.parseInt(request.getParameter("quantity")));
 
 			
-			int recordsAffected = 
-				com.ust.edu.utility.sql.SQLOperations.updateItems(add, 
+			int recordsAffected = SQLOperations.updateItems(add, 
 						Integer.parseInt(request.getParameter("Id")), 
 						connection);
 			request.setAttribute("add", add);

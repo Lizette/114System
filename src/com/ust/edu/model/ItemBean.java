@@ -1,9 +1,9 @@
 package com.ust.edu.model;
 
-public class AddBean {
-	String item;
-	int quantity;
-	int id;
+public class ItemBean {
+	private String item;
+	private int quantity;
+	private int id;
 	public String getItem() {
 		return item;
 	}
