@@ -22,7 +22,7 @@ public class ReturnItemServlet extends HttpServlet {
 
 	Connection connection;
 	
-	public void init(ServletConfig config) throws ServletException {
+	public void init(/*ServletConfig config*/) throws ServletException {
 		connection=SQLOperations.getConnection();
 	}
 
@@ -38,13 +38,14 @@ public class ReturnItemServlet extends HttpServlet {
 		ItemBean item = SQLOperations.searchItems(lab.getItemID(), connection);
 		
 		item.setQuantity(item.getQuantity()+lab.getItemQuantity());
+		
 		SQLOperations.updateStudent(lab, labID, connection);
 		SQLOperations.updateItems(item, lab.getItemID(), connection);
 		
 		
 		ResultSet rs = SQLOperations.getAllStudent(connection); 			
 		request.setAttribute("recordStudent", rs);
-		getServletContext().getRequestDispatcher("/listItems.jsp").forward(request, response);;
+		getServletContext().getRequestDispatcher("/listStudent.jsp").forward(request, response);;
 	}
 
 }
