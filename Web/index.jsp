@@ -66,13 +66,13 @@ input {
 				</div>
 			</form>
 			<br>
-			<!-- <form action="updateForm.jsp" method="post">
+			 <form action="liststudent.html" method="post">
 				<div class="row">
 					<div class="col-md-12">
-						<input type="submit" value="Update" class="btn btn-primary">
+						<input type="submit" value="View Borrowed Items" class="btn btn-primary">
 					</div> 
 				</div>
-			</form>-->
+			</form>
 		</div>
 	</center>
 

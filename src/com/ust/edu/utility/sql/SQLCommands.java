@@ -11,5 +11,7 @@ public interface SQLCommands {
 	String FIND_ITEM="select * from item where equipments=?";
 	String DELETE_ITEM = "delete from item where id=?";
 	String SEARCH_ITEM = "select * from item where id=?";
+	String SEARCH_STUDENT="select * from student where id=?";
+	String UPDATE_STUDENT="update student set timeout=?, returned=? where id=?";
 
 }

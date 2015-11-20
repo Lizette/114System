@@ -65,8 +65,9 @@
 							<td><%=recordStudent.getDate("timeout")%></td>
 							<td>
 							<%if(recordStudent.getString("returned").equals("FALSE")){%>
-							NOT YET
-							<%} %>
+							NOT YET  <a href="returnitem.html?id=<%=recordStudent.getInt("id")%>">toggle</a>
+							<%} else{%>
+							YES<%} %>
 							</td>
 						</tr>			
 			<% } %>

@@ -144,6 +144,7 @@ public class SQLOperations implements SQLCommands {
 			}	
 			return rs;
 		}
+		
 		public static int updateItems(ItemBean add, 
 				int id, Connection connection) {
 			int updated = 0;
@@ -153,6 +154,34 @@ public class SQLOperations implements SQLCommands {
 		        	connection.prepareStatement(UPDATE_ITEMS);
 		        pstmt.setString(1, add.getItem()); 
 		        pstmt.setInt(2, add.getQuantity());
+		        pstmt.setInt(3, id); 
+		        updated = pstmt.executeUpdate();   
+		        connection.commit();
+			} catch (SQLException sqle) {
+				System.out.println("SQLException - updateItems: " 
+					+ sqle.getMessage());
+				
+				try {
+					connection.rollback();
+				} catch (SQLException sql) {
+					System.err.println("Error on Update Connection Rollback - " 
+						+ sql.getMessage());
+				}
+				return updated; 
+			}	
+			return updated;
+		}
+		
+		public static int updateStudent(LabBean lab, 
+				int id, Connection connection) {
+			//"update student set timeout=?, returned=? where id=?";
+			int updated = 0;
+			try {
+				connection.setAutoCommit(false);
+		        PreparedStatement pstmt = 
+		        	connection.prepareStatement(UPDATE_ITEMS);
+		        pstmt.setDate(1, new java.sql.Date(new java.util.Date().getTime())); 
+		        pstmt.setString(2, "TRUE");
 		        pstmt.setInt(3, id); 
 		        updated = pstmt.executeUpdate();   
 		        connection.commit();
@@ -213,6 +242,35 @@ public class SQLOperations implements SQLCommands {
 					return add; 
 				}	
 				return add;
+			}
+		public static LabBean searchStudent(int id, 
+				Connection connection) {
+				
+				LabBean lab = new LabBean();
+				 
+				try {
+			        PreparedStatement pstmt = 
+			        	connection.prepareStatement(SEARCH_STUDENT);
+			        pstmt.setInt(1, id);             
+			        ResultSet rs  = pstmt.executeQuery();
+			        
+			        while (rs.next()) { 
+			        	lab.setFirstName(rs.getString("firstname"));
+			        	lab.setLastName(rs.getString("lastname"));
+			        	lab.setSection(rs.getString("section"));
+			        	lab.setItemID(rs.getInt("itemID"));
+			        	lab.setItem(rs.getString("itemborrowed"));
+			        	lab.setItemQuantity(rs.getInt("quantity"));
+			        	lab.setTimeIn(rs.getDate("timein"));
+			        	lab.setTimeOut(rs.getDate("timeout"));
+			        	
+			        }
+				} catch (SQLException sqle) {
+					System.out.println("SQLException - searchItem: " 
+							+ sqle.getMessage());
+					return lab; 
+				}	
+				return lab;
 			}
 		
 		
