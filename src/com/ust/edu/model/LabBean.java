@@ -7,8 +7,8 @@ public class LabBean {
 	private int itemID;
 	private String item="";
 	private int itemQuantity;
-	private java.sql.Date timeIn;
-	private java.sql.Date timeOut;
+	private java.sql.Timestamp timeIn;
+	private java.sql.Timestamp timeOut;
 	
 	public String getLastName() {
 		return lastName;
@@ -46,16 +46,16 @@ public class LabBean {
 	public void setItemQuantity(int itemQuantity) {
 		this.itemQuantity = itemQuantity;
 	}
-	public java.sql.Date getTimeIn() {
+	public java.sql.Timestamp getTimeIn() {
 		return timeIn;
 	}
-	public void setTimeIn(java.sql.Date timeIn) {
+	public void setTimeIn(java.sql.Timestamp timeIn) {
 		this.timeIn = timeIn;
 	}
-	public java.sql.Date getTimeOut() {
+	public java.sql.Timestamp getTimeOut() {
 		return timeOut;
 	}
-	public void setTimeOut(java.sql.Date timeOut) {
+	public void setTimeOut(java.sql.Timestamp timeOut) {
 		this.timeOut = timeOut;
 	}
 	

@@ -33,6 +33,12 @@
 </head>
 <body bgcolor="#DBFFFF"><center>
 <div class="box">
+	<script type="text/javascript">
+		document.write ('<p>Current time is: <span id="date-time">', new Date().toLocaleString(), '<\/span>.<\/p>')
+		if (document.getElementById) onload = function () {
+			setInterval ("document.getElementById ('date-time').firstChild.data = new Date().toLocaleString()", 50)
+		}
+	</script>
 <hr>
 <h2 class="text-center">List of Students</h2>
 <hr>
@@ -61,8 +67,8 @@
 							<td><%=recordStudent.getString("Section")%></td>
 							<td><%=recordStudent.getString("itemborrowed")%></td>
 							<td><%=recordStudent.getInt("quantity")%></td>
-							<td><%=recordStudent.getDate("timein")%></td>
-							<td><%=recordStudent.getDate("timeout")%></td>
+							<td><%=recordStudent.getTimestamp("timein")%></td>
+							<td><%=recordStudent.getTimestamp("timeout")%></td>
 							<td>
 							<%if(recordStudent.getString("returned").equals("FALSE")){%>
 							NOT YET  <a href="returnitem.html?id=<%=recordStudent.getInt("id")%>">toggle</a>

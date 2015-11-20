@@ -30,7 +30,13 @@
 <title>Add</title>
 </head>
 <body bgcolor="#DBFFFF">
-	<div class="box">
+	<center><div class="box">
+	<script type="text/javascript">
+		document.write ('<p>Current time is: <span id="date-time">', new Date().toLocaleString(), '<\/span>.<\/p>')
+		if (document.getElementById) onload = function () {
+			setInterval ("document.getElementById ('date-time').firstChild.data = new Date().toLocaleString()", 50)
+		}
+	</script>
 	<hr>
 	<h2 class="text-center">ChemEng Inventory System</h2>
 	<hr>

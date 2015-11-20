@@ -33,7 +33,13 @@ input {
 <title>Home</title>
 </head>
 <body bgcolor="#DBFFFF">
-	<div class="box">
+	<div class="box"><center>
+	<script type="text/javascript">
+		document.write ('<p>Current time is: <span id="date-time">', new Date().toLocaleString(), '<\/span>.<\/p>')
+		if (document.getElementById) onload = function () {
+			setInterval ("document.getElementById ('date-time').firstChild.data = new Date().toLocaleString()", 50)
+		}
+	</script>
 		<hr>
 		<h2 class="text-center">How many items would you want to borrow?</h2>
 		<hr>
@@ -73,7 +79,7 @@ input {
 							<div class="col-md-12">
 							</div><input type="submit" value="submit" class="btn btn-primary">
 						</div></center></div></form></center>
-							
+							<hr>
 							<form action="index.jsp">
 							<div class="row">
 								<div class="col-md-12">

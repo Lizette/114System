@@ -30,9 +30,16 @@
 <title>Passenger Transaction Status</title>
 </head>
 <body bgcolor="#DBFFFF"><center>
+
 <%
 	if (request.getParameter("success").equals("true")) { %>
 		<div class="box">
+			<script type="text/javascript">
+				document.write ('<p>Current time is: <span id="date-time">', new Date().toLocaleString(), '<\/span>.<\/p>')
+				if (document.getElementById) onload = function () {
+					setInterval ("document.getElementById ('date-time').firstChild.data = new Date().toLocaleString()", 50)
+				}
+			</script>
 		<hr>
 		<h2 class="text-center">Successful Transaction</h2>
 		<hr>
@@ -43,7 +50,17 @@
 		</div>	
 		
 	<% } else { %>
-  <h1>Registration Failed</h1>		
+	<div class="box">
+	<script type="text/javascript">
+				document.write ('<p>Current time is: <span id="date-time">', new Date().toLocaleString(), '<\/span>.<\/p>')
+				if (document.getElementById) onload = function () {
+					setInterval ("document.getElementById ('date-time').firstChild.data = new Date().toLocaleString()", 50)
+				}
+			</script>
+		<hr>
+  <h1>Registration Failed</h1>	
+  <hr>	
+  </div>
 <% } %> 
 			<hr>
 			<form action="index.jsp" method="post">

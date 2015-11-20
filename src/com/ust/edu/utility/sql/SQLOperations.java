@@ -71,7 +71,7 @@ public class SQLOperations implements SQLCommands {
 	        pstmt.setString(5, lab.getItem());
 	        pstmt.setInt(6, lab.getItemQuantity());
 	        pstmt.setString(7, "FALSE");
-	        pstmt.setDate(8, new java.sql.Date(new java.util.Date().getTime()));
+	        pstmt.setTimestamp(8, new java.sql.Timestamp(new java.util.Date().getTime()));
 	        
 	        pstmt.executeUpdate();
 		} catch (SQLException sqle) {
@@ -180,7 +180,7 @@ public class SQLOperations implements SQLCommands {
 				connection.setAutoCommit(false);
 		        PreparedStatement pstmt = 
 		        	connection.prepareStatement(UPDATE_STUDENT);
-		        pstmt.setDate(1, new java.sql.Date(new java.util.Date().getTime())); 
+		        pstmt.setTimestamp(1, new java.sql.Timestamp(new java.util.Date().getTime())); 
 		        pstmt.setString(2, "TRUE");
 		        pstmt.setInt(3, id); 
 		        updated = pstmt.executeUpdate();   
@@ -261,8 +261,8 @@ public class SQLOperations implements SQLCommands {
 			        	lab.setItemID(rs.getInt("itemID"));
 			        	lab.setItem(rs.getString("itemborrowed"));
 			        	lab.setItemQuantity(rs.getInt("quantity"));
-			        	lab.setTimeIn(rs.getDate("timein"));
-			        	lab.setTimeOut(rs.getDate("timeout"));
+			        	lab.setTimeIn(rs.getTimestamp("timein"));
+			        	lab.setTimeOut(rs.getTimestamp("timeout"));
 			        	
 			        }
 				} catch (SQLException sqle) {
