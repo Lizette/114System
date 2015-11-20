@@ -179,7 +179,7 @@ public class SQLOperations implements SQLCommands {
 			try {
 				connection.setAutoCommit(false);
 		        PreparedStatement pstmt = 
-		        	connection.prepareStatement(UPDATE_ITEMS);
+		        	connection.prepareStatement(UPDATE_STUDENT);
 		        pstmt.setDate(1, new java.sql.Date(new java.util.Date().getTime())); 
 		        pstmt.setString(2, "TRUE");
 		        pstmt.setInt(3, id); 

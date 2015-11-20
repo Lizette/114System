@@ -2,6 +2,7 @@ package com.ust.edu.controller;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.ResultSet;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -30,6 +31,8 @@ public class ReturnItemServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
 		int labID = Integer.parseInt(request.getParameter("id"));
 		LabBean lab = SQLOperations.searchStudent(labID, connection);
 		ItemBean item = SQLOperations.searchItems(lab.getItemID(), connection);
@@ -37,7 +40,11 @@ public class ReturnItemServlet extends HttpServlet {
 		item.setQuantity(item.getQuantity()+lab.getItemQuantity());
 		SQLOperations.updateStudent(lab, labID, connection);
 		SQLOperations.updateItems(item, lab.getItemID(), connection);
-		getServletContext().getRequestDispatcher("liststudent.html").forward(request, response);
+		
+		
+		ResultSet rs = SQLOperations.getAllStudent(connection); 			
+		request.setAttribute("recordStudent", rs);
+		getServletContext().getRequestDispatcher("/listItems.jsp").forward(request, response);;
 	}
 
 }
