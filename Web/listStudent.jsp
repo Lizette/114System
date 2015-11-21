@@ -81,7 +81,7 @@ a.toggler.off {
 					<% 
 						while(recordStudent.next()) {	
 					%>
-						<tr><a name="<%=recordStudent.getInt("id")%>"></a>
+						<tr><a name="<%=recordStudent.getInt("id")%>">
 							<td><%=recordStudent.getInt("id")%></td>
 							<td><%=recordStudent.getString("LastName")%></td>
 							<td><%=recordStudent.getString("FirstName")%></td>
@@ -89,7 +89,7 @@ a.toggler.off {
 							<td><%=recordStudent.getString("itemborrowed")%></td>
 							<td><%=recordStudent.getInt("quantity")%></td>
 							<td><%=recordStudent.getTimestamp("timein")%></td>
-							<td><%=recordStudent.getTimestamp("timeout")%></td>
+							<td><%=recordStudent.getTimestamp("timeout")%></td></a>
 							<td>
 							<%if(recordStudent.getString("returned").equals("FALSE")){%>
 							<a href="returnitem.html?id=<%=recordStudent.getInt("id")%>&status=<%=recordStudent.getString("returned")%>" class="toggler"><font color="white">NO</font></a>

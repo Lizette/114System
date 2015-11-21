@@ -51,7 +51,9 @@ public class ReturnItemServlet extends HttpServlet {
 		//ResultSet rs = SQLOperations.getAllStudent(connection); 			
 		//request.setAttribute("recordStudent", rs);
 		//getServletContext().getRequestDispatcher("/listStudent.jsp").forward(request, response);;
-		response.sendRedirect("/114_System/liststudent.html#"+labID);
+		//response.sendRedirect("/114_System/liststudent.html#"+labID);
+		String sendTo = response.encodeRedirectURL("/114_System/liststudent.html#"+labID);
+		response.sendRedirect(sendTo);
 	}
 
 }
