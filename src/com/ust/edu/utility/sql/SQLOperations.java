@@ -173,7 +173,7 @@ public class SQLOperations implements SQLCommands {
 		}
 		
 		public static int updateStudent(LabBean lab, 
-				int id, Connection connection) {
+				int id, String status, Connection connection) {
 			//"update student set timeout=?, returned=? where id=?";
 			int updated = 0;
 			try {
@@ -181,7 +181,14 @@ public class SQLOperations implements SQLCommands {
 		        PreparedStatement pstmt = 
 		        	connection.prepareStatement(UPDATE_STUDENT);
 		        pstmt.setTimestamp(1, new java.sql.Timestamp(new java.util.Date().getTime())); 
-		        pstmt.setString(2, "TRUE");
+		        if(status.equals("FALSE")){
+		        	pstmt.setString(2, "TRUE");
+		        	pstmt.setTimestamp(1, new java.sql.Timestamp(new java.util.Date().getTime())); 
+		        }
+		        else{
+		        	pstmt.setString(2,"FALSE");
+		        	pstmt.setTimestamp(1, null); 
+		        }
 		        pstmt.setInt(3, id); 
 		        updated = pstmt.executeUpdate();   
 		        connection.commit();

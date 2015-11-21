@@ -34,18 +34,24 @@ public class ReturnItemServlet extends HttpServlet {
 		
 		
 		int labID = Integer.parseInt(request.getParameter("id"));
+		String status= request.getParameter("status");
 		LabBean lab = SQLOperations.searchStudent(labID, connection);
 		ItemBean item = SQLOperations.searchItems(lab.getItemID(), connection);
 		
-		item.setQuantity(item.getQuantity()+lab.getItemQuantity());
+		if(status.equals("FALSE")){
+			item.setQuantity(item.getQuantity()+lab.getItemQuantity());	
+		}else{
+			item.setQuantity(item.getQuantity()-lab.getItemQuantity());	
+		}
 		
-		SQLOperations.updateStudent(lab, labID, connection);
+		SQLOperations.updateStudent(lab, labID, status , connection);
 		SQLOperations.updateItems(item, lab.getItemID(), connection);
 		
 		
 		ResultSet rs = SQLOperations.getAllStudent(connection); 			
-		request.setAttribute("recordStudent", rs);
-		getServletContext().getRequestDispatcher("/listStudent.jsp").forward(request, response);;
+		//request.setAttribute("recordStudent", rs);
+		//getServletContext().getRequestDispatcher("/listStudent.jsp").forward(request, response);;
+		response.sendRedirect("/liststudent.html#"+labID);
 	}
 
 }
