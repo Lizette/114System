@@ -37,7 +37,7 @@ public class ReturnItemServlet extends HttpServlet {
 		String status= request.getParameter("status");
 		LabBean lab = SQLOperations.searchStudent(labID, connection);
 		ItemBean item = SQLOperations.searchItems(lab.getItemID(), connection);
-		
+		//check ng status ng hineram
 		if(status.equals("FALSE")){
 			item.setQuantity(item.getQuantity()+lab.getItemQuantity());	
 		}else{
@@ -48,10 +48,10 @@ public class ReturnItemServlet extends HttpServlet {
 		SQLOperations.updateItems(item, lab.getItemID(), connection);
 		
 		
-		ResultSet rs = SQLOperations.getAllStudent(connection); 			
+		//ResultSet rs = SQLOperations.getAllStudent(connection); 			
 		//request.setAttribute("recordStudent", rs);
 		//getServletContext().getRequestDispatcher("/listStudent.jsp").forward(request, response);;
-		response.sendRedirect("/liststudent.html#"+labID);
+		response.sendRedirect("/114_System/liststudent.html#"+labID);
 	}
 
 }
