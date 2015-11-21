@@ -28,8 +28,24 @@
   	background-color: rgba(0,0,0,0.8);
   	margin-top: 5%;
   }
+  a.toggler {
+    background: red;
+    cursor: pointer;
+    border: 2px solid black;
+    border-right-width: 15px;
+    padding: 0 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all .5s ease;
+}
+
+a.toggler.off {
+    background: green;
+    border-right-width: 2px;
+    border-left-width: 15px;
+}
 </style>
-<title>List of Passengers</title>
+<title>List of Students</title>
 </head>
 <body bgcolor="#DBFFFF"><center>
 <div class="box">
@@ -38,6 +54,11 @@
 		if (document.getElementById) onload = function () {
 			setInterval ("document.getElementById ('date-time').firstChild.data = new Date().toLocaleString()", 50)
 		}
+		$(document).ready(function(){
+		    $('a.toggler').click(function(){
+		        $(this).toggleClass('off');
+		    });
+		});
 	</script>
 <hr>
 <h2 class="text-center">List of Students</h2>
@@ -71,9 +92,10 @@
 							<td><%=recordStudent.getTimestamp("timeout")%></td>
 							<td>
 							<%if(recordStudent.getString("returned").equals("FALSE")){%>
-							NOT YET  <a href="returnitem.html?id=<%=recordStudent.getInt("id")%>">toggle</a>
+							<a href="returnitem.html?id=<%=recordStudent.getInt("id")%>" class="toggler"><font color="white">NO</font></a>
 							<%} else{%>
-							YES<%} %>
+							<a href="#" class="toggler off"><font color="white">YES</font></a>
+							<%} %>
 							</td>
 						</tr>			
 			<% } %>

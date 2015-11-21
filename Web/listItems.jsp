@@ -66,13 +66,13 @@
 					<td align="center">
 					<!-- KUNG TRIP IUPDATE ANG INFO ABOUT SA INVENTORY -->
 					  <a href="maintenanceitems.html?id=<%=recordStudent.getInt("id")%>&action=edit">
-					  	<img src="images/Editor.ico"/>
+					  	<img src="edit.png"/>
 					  </a>
 					</td>
 					<td align="center">
 					<!-- KUNG TRIP IDELETE ANG ITEM -->
 					  <a href="maintenanceitems.html?id=<%=recordStudent.getInt("id")%>&action=delete">
-					  	<img src="images/busy.ico"/>
+					  	<img src="delete3.png"/>
 					  </a>
 					</td>
 				</tr>					
