@@ -1,0 +1,24 @@
+CREATE DATABASE `ics114` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+use database ics114;
+CREATE TABLE `student` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `lastname` varchar(50) NOT NULL,
+  `firstname` varchar(50) NOT NULL,
+  `itemborrowed` varchar(45) NOT NULL,
+  `quantity` int(11) DEFAULT '0',
+  `timein` datetime DEFAULT CURRENT_TIMESTAMP,
+  `timeout` datetime DEFAULT NULL,
+  `returned` varchar(5) NOT NULL DEFAULT 'FALSE',
+  `itemID` int(11) NOT NULL,
+  `section` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `item` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `equipments` varchar(50) NOT NULL,
+  `totalnum` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
