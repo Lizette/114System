@@ -54,7 +54,7 @@ input {
 							<label>Enter Student's Last Name:</label>
 						</div>
 						<div class="col-md-6">
-							<input type="text" name="lastName" class="form-control">
+							<input type="text" name="lastName" required="required" class="form-control">
 						</div>
 					</div>
 					<div class="row">
@@ -62,7 +62,7 @@ input {
 							<label>Enter Student's First Name: </label>
 						</div>
 						<div class="col-md-6">
-							<input type="text" name="firstName" class="form-control">
+							<input type="text" name="firstName"  required="required" class="form-control">
 						</div>
 					</div>
 					<div class="row">
@@ -70,7 +70,7 @@ input {
 							<label>Enter Student's Section: </label>
 						</div>
 						<div class="col-md-6">
-							<input type="text" name="section" class="form-control">
+							<input type="text" name="section"  required="required" class="form-control">
 						</div>
 					</div>
 					<hr>
