@@ -65,8 +65,8 @@ a.toggler.off {
 <!-- SEARCH BAR -->
 <%
 	String query="";
-	if(request.getParameter("query")!=null){
-		query=(String) request.getParameter("query");
+	if(request.getAttribute("query")!=null){
+		query=(String) request.getAttribute("query");
 	}
 
 %>
@@ -109,9 +109,9 @@ a.toggler.off {
 							<td><%=recordStudent.getTimestamp("timeout")%></td></a>
 							<td>
 							<%if(recordStudent.getString("returned").equals("FALSE")){%>
-							<a href="returnitem.html?id=<%=recordStudent.getInt("id")%>&status=<%=recordStudent.getString("returned")%>&query=<%=query%>" class="toggler"><font color="white">NO</font></a>
+							<a href="returnitem.html?id=<%=recordStudent.getInt("id")%>&status=<%=recordStudent.getString("returned")%>" class="toggler"><font color="white">NO</font></a>
 							<%} else{%>
-							<a href="returnitem.html?id=<%=recordStudent.getInt("id")%>&status=<%=recordStudent.getString("returned")%>&query=<%=query%>" class="toggler off"><font color="white">YES</font></a>
+							<a href="returnitem.html?id=<%=recordStudent.getInt("id")%>&status=<%=recordStudent.getString("returned")%>" class="toggler off"><font color="white">YES</font></a>
 							<%} %>
 							</td>
 						</tr>			

@@ -38,8 +38,15 @@ public class ListStudentServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {	
 			if (connection != null) {
-				ResultSet rs = SQLOperations.getAllStudent(connection); 			
+				ResultSet rs;
+				if(request.getParameter("query")!=null){
+					rs = SQLOperations.searchStudentsDatabase(request.getParameter("query"), connection);			
+					request.setAttribute("recordStudent", rs);
+				}
+				else{
+				rs = SQLOperations.getAllStudent(connection); 			
 				request.setAttribute("recordStudent", rs);
+				}
 				getServletContext().getRequestDispatcher("/listStudent.jsp")
 					.forward(request, response);
 			} else {
