@@ -13,9 +13,5 @@ public interface SQLCommands {
 	String SEARCH_ITEM = "select * from item where id=?";
 	String SEARCH_STUDENT="select * from student where id=?";
 	String UPDATE_STUDENT="update student set timeout=?, returned=? where id=?";
-	String SEARCH_STUDENTS_QUERY="select * from student where lastname like ?"
-			+ "OR firstName like ?"
-			+ "OR Section like ?"
-			+ "OR itemId like ?"
-			+ "or itemBorrowed like ?";
+
 }

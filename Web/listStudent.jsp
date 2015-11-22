@@ -61,23 +61,6 @@ a.toggler.off {
 		});
 	</script>
 <hr>
-
-<!-- SEARCH BAR -->
-<%
-	String query="";
-	if(request.getAttribute("query")!=null){
-		query=(String) request.getAttribute("query");
-	}
-
-%>
-
-
-<form action="searchstudent.html">
-	<p>SEARCH<input type="text" name="query" value="<%=query%>"></p>
-	<input type="submit" value="submit"/>
-</form>
-
-
 <h2 class="text-center">List of Students</h2>
 <hr>
 	<div class="row">
