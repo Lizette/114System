@@ -28,4 +28,8 @@ public interface SQLCommands {
 			+ "OR Section like ?"
 			+ "OR itemId like ?"
 			+ "or itemBorrowed like ?";
+	
+	String SEARCH_ITEMS_QUERY="select * from item where id like ?"
+			+ "OR equipments like ?"
+			+ "OR totalnum like ?";
 }
