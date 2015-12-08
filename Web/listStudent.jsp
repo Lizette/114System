@@ -73,8 +73,8 @@ a.toggler.off {
 
 
 <form action="searchstudent.html">
-	<p>SEARCH<input type="text" name="query" value="<%=query%>"></p>
-	<input type="submit" value="submit"/>
+	<p>SEARCH<input type="text" name="query" value="<%=query%>" class="form-control"></p>
+	<input type="submit" value="submit" class= "btn btn-primary"/>
 </form>
 
 
