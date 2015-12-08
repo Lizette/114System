@@ -33,7 +33,7 @@ input {
 	overflow-y: scroll;
 }
 </style>
-<title>Home</title>
+<title>Borrow Form</title>
 </head>
 <body bgcolor="#DBFFFF">
 	<div class="box">
@@ -84,7 +84,17 @@ input {
 						</div>
 						<hr>
 						<div class="box">
-							<p>Rules and Regulations in Borrowing Laboratory Equipments
+							<h2>Rules and Regulations in Borrowing Laboratory Equipments</h2>
+							<div align="left">
+							<ul style="list-style-type:square">
+								<li>Students who would like to borrow equipment must fill up first the borrow form.</li>
+								<li> Upon receiving the item, handle with care and as much as possible do not cause any damage/defect.</li>
+								<li> Borrowers are advised to check for any defect before returning the equipment.
+								 If ever there is a damage, it should be reported immediately to the instructor</li>
+							  	<li>All equipment/materials must be returned within or after the laboratory hour of your class.</li>
+							  	<li> All users must observe and follow the Rules and Regulations in borrowing equipments in Chemical Engineering Laboratory</li>
+							</ul>
+							</div>
 						</div>
 				</div>
 				<div class="row">

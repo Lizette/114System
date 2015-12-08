@@ -299,5 +299,22 @@ public class SQLOperations implements SQLCommands {
 		return rs;
 		
 	}
+	public static ResultSet searchItemDatabase(String search,Connection connection){
+		ResultSet rs=null;
+		try {
+			String query = SEARCH_ITEMS_QUERY;
+			
+			PreparedStatement pstmt = connection.prepareStatement(query);
+			pstmt.setString(1,"%"+search+"%");
+			
+			rs = pstmt.executeQuery();
+		} catch (SQLException e) {
+			System.out.print("SearchItemDatabase error-");
+			e.printStackTrace();
+		}
+		
+		return rs;
+		
+	}
 
 }
