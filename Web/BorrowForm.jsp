@@ -48,8 +48,22 @@ text-align:    center;
 text-shadow:   none;
 }
 </style>
-<title>Home</title>
+<title>BorrowForm</title>
 </head>
+<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script> 
+<script type="text/javascript" > 
+			jQuery(function ($) {
+			    //form submit handler
+			    $('#borrowform').submit(function (e) {
+			        //check atleat 1 checkbox is checked
+			        if (!$('.borrow').is(':checked')) {
+			            //prevent the default form submit if it is not checked
+			            alert("You must check at least one item");
+			            e.preventDefault();
+			        }
+			    })
+			})
+			</script>
 <body bgcolor="#DBFFFF">
 	<div class="box">
 		<center>
@@ -66,10 +80,11 @@ text-shadow:   none;
 			<hr>
 			<h2 class="text-center">ChemEng Inventory System</h2>
 			<hr>
+			<form id="borrowform" onsubmit="return checkCheckBoxes(this);" action="borrowformcontinuation.html" method="post">
 			<div class="row">
 				<div class="col-md-7"
 					style="border-right: 2px solid #555; padding: 20px;">
-					<form action="borrowformcontinuation.html" method="post">
+					
 						<div class="row">
 							<div class="col-md-5">
 								<label>Enter Student's Last Name:</label>
@@ -141,7 +156,7 @@ text-shadow:   none;
 								%>
 								<label>
 									
-										<input type="checkbox" name="borrowed"
+										<input type="checkbox" name="borrowed" class="borrow"
 											value=<%=items.getString("id")%>><%=items.getString("equipments")%>
 									
 								</label>
@@ -234,5 +249,7 @@ text-shadow:   none;
 					</div>
 				</form>
 			</center>
+			
+			
 </body>
 </html>
