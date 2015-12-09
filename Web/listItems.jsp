@@ -11,7 +11,7 @@
 	media="screen" />
 <style>
  body {
-  font-family: Courier New;
+  font-family: 'Arial', sans-serif;
   margin: 20px;
   background-image: url('lab.jpg'); 
 	/*background-image: url('0001.png');*/
@@ -81,7 +81,7 @@ text-shadow:   none;
 
 			<form action="searchitem.html">
 				<p>
-					<b>SEARCH</b> <input type="text" name="query" value="<%=query%>" >
+					<b>SEARCH</b> <input type="text" name="query" value="<%=query%>" class="form-control" >
 				<input type="submit" value="Search" class="srch"/>
 			</form>
 
