@@ -8,12 +8,12 @@
 <link rel="stylesheet" href="bootstrap.css" type="text/css"
 	media="screen" />
 <style>
-body {
-	font-family: 'Arial', sans-serif;
-	margin: 20px;
-	background-image: url('lab.jpg');
-	color: #fff;
-}
+ body {
+  font-family: Courier New;
+  margin: 20px;
+  background-image: url('0001.png');
+  color: #fff;
+  }
 
 label {
 	padding-top: 8px;
@@ -31,6 +31,18 @@ input {
 
 .checkbox {
 	overflow-y: scroll;
+}
+.btn {
+ background:    #fafafa;
+border:        2px solid #73081a;
+border-radius: 5px;
+box-shadow:    1px 1px 0 0 #444;
+color:         #000;
+display:       inline-block;
+padding:       8px 20px;
+font-size:    20px;
+text-align:    center;
+text-shadow:   none;
 }
 </style>
 <title>Home</title>
@@ -201,7 +213,7 @@ input {
 				<form action="index.jsp">
 					<div class="row">
 						<div class="col-md-12">
-							<input type="submit" value="BACK TO HOME" class="btn btn-primary">
+							<input type="submit" value="BACK TO HOME" class="btn">
 						</div>
 					</div>
 				</form>
