@@ -37,11 +37,13 @@ Connection connection;
 		ResultSet rs = SQLOperations.searchDateDatabase(query, connection);
 		try {
 			pdfBean.createPdf(rs, query);
+			response.sendRedirect("generateupdate.jsp?status=true");
 		} catch (DocumentException e) {
 			System.out.println("createBean-");
 			e.printStackTrace();
+			response.sendRedirect("generateupdate.jsp?status=false");
 		}
-		getServletContext().getRequestDispatcher("/generateupdate.jsp").forward(request, response);
+		
 	}
 
 }
