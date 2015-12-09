@@ -11,7 +11,8 @@
  body {
   font-family: Courier New;
   margin: 20px;
-  background-image: url('0001.png');
+  background-image: url('lab.jpg'); 
+	/*background-image: url('0001.png');*/
   color: #fff;
   }
 
@@ -31,6 +32,8 @@ input {
 
 .checkbox {
 	overflow-y: scroll;
+	position:relative;
+	height: 300px;
 }
 .btn {
  background:    #fafafa;
@@ -96,118 +99,132 @@ text-shadow:   none;
 						</div>
 						<hr>
 						<div class="box">
-							<p>Rules and Regulations in Borrowing Laboratory Equipments
+							<h2>Rules and Regulations in Borrowing Laboratory Equipments</h2>
+							<div align="left">
+							<ul style="list-style-type:square">
+								<li>Students who would like to borrow equipment must fill up first the borrow form.</li>
+								<li> Upon receiving the item, handle with care and as much as possible do not cause any damage/defect.</li>
+								<li> Borrowers are advised to check for any defect before returning the equipment.
+								 If ever there is a damage, it should be reported immediately to the instructor</li>
+							  	<li>All equipment/materials must be returned within or after the laboratory hour of your class.</li>
+							  	<li> All users must observe and follow the Rules and Regulations in borrowing equipment from the
+							  	 Chemical Engineering Laboratory</li>
+							</ul>
+							</div>
 						</div>
-				</div>
-				<div class="row">
-					<div class="col-md-5">
-						<label>Items to Borrow:</label>
-					</div>
-					<div class="col-md-5">
-						<!-- dito ineenumerate ang mga available items -->
-						<%
-							if (items.next()) {
-						%>
-						<div class="checkbox">
-							<label> <%
- 	if (items.getInt("totalnum") != 0) {
- %>
-								<p>
-									<input type="checkbox" name="borrowed"
-										value=<%=items.getString("id")%>><%=items.getString("equipments")%></label>
-							</p>
-							<%
-								}
-							%>
-							<%
-								while (items.next()) {
-							%>
-							<%
-								if (items.getInt("totalnum") != 0) {
-							%>
-							<label>
-								<p>
-									<input type="checkbox" name="borrowed"
-										value=<%=items.getString("id")%>><%=items.getString("equipments")%>
-							</label>
-							</p>
-
-							<%
-								}
-									}
-								} else {
-							%>
-							YOU HAVE NO ITEMS IN YOUR INVENTORY
-							<%
-								}
-							%>
-						</div>
-						<input type="submit" value="Borrow" class="btn btn-primary">
-					</div>
 					</form>
 				</div>
+				<div class="col-md-5">							
+						<div class="col-md-12 text-center">
+							<label>Items to Borrow:</label>
+						</div>
+						<div class="col-md-offset-2 col-md-8">
+							<!-- dito ineenumerate ang mga available items -->
+							<%
+								if (items.next()) {
+							%>
+							<div class="checkbox">
+								<label> <%
+	 	if (items.getInt("totalnum") != 0) {
+	 %>
+									
+										<input type="checkbox" name="borrowed"
+											value=<%=items.getString("id")%>><%=items.getString("equipments")%></label>
+								
+								<%
+									}
+								%>
+								<%
+									while (items.next()) {
+								%>
+								<%
+									if (items.getInt("totalnum") != 0) {
+								%>
+								<label>
+									
+										<input type="checkbox" name="borrowed"
+											value=<%=items.getString("id")%>><%=items.getString("equipments")%>
+									
+								</label>
+								
 
-				<!--  
-					    <div class="checkbox">
-					      <label><input type="checkbox" value="">Option 2</label>
-					    </div>
-					    <div class="checkbox">
-					      <label><input type="checkbox" value="">Option 3</label>
-					    </div>
-					  </form>
-						<br><br>
+								<%
+									}
+										}
+									} else {
+								%>
+								YOU HAVE NO ITEMS IN YOUR INVENTORY
+								<%
+									}
+								%>
+							</div>
+							<input type="submit" value="Borrow" class="btn">
+						</div>
 						
-						<p>Select Items you OWN</p>
-						<form>
-						<input type="checkbox" name="owns" value="Bike">Bike<br/>
-						<input type="checkbox" name="owns" value="Car">car<br/>
-						<input type="checkbox" name="owns" value="Refridgerator">Refrigerator<br/>
-						<input type="checkbox" name="owns" value="Mobile">Mobile<br/>
-						<input type="checkbox" name="owns" value="Tablet">Tablet<br/>
-						<input type="checkbox" name="owns" value="Computer">Computer<br/>
-						<input type="button" value="Get Values" onclick="getMultipleCheckbox(this.form.owns);"/>
-						</form>
-					<script type="text/javascript">
-						function getMultipleCheckbox(inputdata) {
-						    var selectedItems = [];
-						    var count = 0;
-						    for(var i=0;i<inputdata.length;i++) {
-						        if(inputdata[i].checked) {
-						            selectedItems[count] = inputdata[i].value;
-						            count++;
-						        }
-						    }
-						    for(var loop=0; loop< selectedItems.length; loop++) {
-						        console.log(selectedItems[loop]);
-						    }
-						    return selectedItems;
-						}
-</script> -->
+					</div>
+				</div>
+					<!--  
+						    <div class="checkbox">
+						      <label><input type="checkbox" value="">Option 2</label>
+						    </div>
+						    <div class="checkbox">
+						      <label><input type="checkbox" value="">Option 3</label>
+						    </div>
+						  </form>
+							<br><br>
+							
+							<p>Select Items you OWN</p>
+							<form>
+							<input type="checkbox" name="owns" value="Bike">Bike<br/>
+							<input type="checkbox" name="owns" value="Car">car<br/>
+							<input type="checkbox" name="owns" value="Refridgerator">Refrigerator<br/>
+							<input type="checkbox" name="owns" value="Mobile">Mobile<br/>
+							<input type="checkbox" name="owns" value="Tablet">Tablet<br/>
+							<input type="checkbox" name="owns" value="Computer">Computer<br/>
+							<input type="button" value="Get Values" onclick="getMultipleCheckbox(this.form.owns);"/>
+							</form>
+						<script type="text/javascript">
+							function getMultipleCheckbox(inputdata) {
+							    var selectedItems = [];
+							    var count = 0;
+							    for(var i=0;i<inputdata.length;i++) {
+							        if(inputdata[i].checked) {
+							            selectedItems[count] = inputdata[i].value;
+							            count++;
+							        }
+							    }
+							    for(var loop=0; loop< selectedItems.length; loop++) {
+							        console.log(selectedItems[loop]);
+							    }
+							    return selectedItems;
+							}
+	</script> -->
 
 
-				<!-- 
-					<div class="row">
-						<div class="col-md-5"><label>Enter Quantity of the item to be borrowed: </label></div>
-						<div class="col-md-6"><input type="text" name="item_num" class="form-control"></div>
-					</div>
-					<br><br>
-					<div class="col-md-12">
-							<input type="submit" value="Borrow" class="btn btn-primary">
-					</div>
+					<!-- 
+						<div class="row">
+							<div class="col-md-5"><label>Enter Quantity of the item to be borrowed: </label></div>
+							<div class="col-md-6"><input type="text" name="item_num" class="form-control"></div>
+						</div>
+						<br><br>
+						<div class="col-md-12">
+								<input type="submit" value="Borrow" class="btn btn-primary">
+						</div>
+					</div> -->
+
+					<!--<div class="col-md-5">
+					<h4>
+						<strong>List of Laboratory Equipments Available</strong>
+					</h4>
+					<p>Option 1</p>
+					<p>Option 2</p>
+					<p>Option 3</p>
+					<p>Option 4</p>
+					<p>Option 5</p>
+					<p>Option 6</p>
 				</div> -->
 
-				<!--<div class="col-md-5">
-				<h4>
-					<strong>List of Laboratory Equipments Available</strong>
-				</h4>
-				<p>Option 1</p>
-				<p>Option 2</p>
-				<p>Option 3</p>
-				<p>Option 4</p>
-				<p>Option 5</p>
-				<p>Option 6</p>
-			</div> -->
-
+				</div>
 			</div>
 			<center>
 				<form action="index.jsp">

@@ -9,7 +9,8 @@
  body {
   font-family: Courier New;
   margin: 20px;
-  background-image: url('0001.png');
+  background-image: url('lab.jpg'); 
+	/*background-image: url('0001.png');*/
   color: #fff;
   }
   
