@@ -32,4 +32,5 @@ public interface SQLCommands {
 	String SEARCH_ITEMS_QUERY="select * from item where id like ?"
 			+ "OR equipments like ?"
 			+ "OR totalnum like ?";
+	String GENERATE_REPORT_QUERY = "SELECT * FROM student where timein >= ? AND timein <  ?";
 }

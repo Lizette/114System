@@ -319,5 +319,25 @@ public class SQLOperations implements SQLCommands {
 		return rs;
 		
 	}
+	public static ResultSet searchDateDatabase(java.sql.Date date,Connection connection){
+		ResultSet rs=null;
+		try {
+			String query = GENERATE_REPORT_QUERY;
+			
+			PreparedStatement pstmt = connection.prepareStatement(query);
+			pstmt.setDate(1,date);
+			pstmt.setDate(2, new java.sql.Date( date.getTime() + 24*60*60*1000));
+			//java.sql.Date now = new java.sql.Date( new java.util.Date().getTime() );
+			//java.sql.Date tomorrow= new java.sql.Date( now.getTime() + 24*60*60*1000);
+			
+			rs = pstmt.executeQuery();
+		} catch (SQLException e) {
+			System.out.print("SearchStudentsDatabase error-");
+			e.printStackTrace();
+		}
+		
+		return rs;
+		
+	}
 
 }
