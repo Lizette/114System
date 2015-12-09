@@ -19,8 +19,12 @@ import com.ust.edu.utility.sql.SQLOperations;
 public class SearchItemServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 <<<<<<< HEAD
+<<<<<<< HEAD
        
 	Connection connection;
+=======
+Connection connection;
+>>>>>>> origin/master
 =======
 Connection connection;
 >>>>>>> origin/master
@@ -29,6 +33,11 @@ Connection connection;
 		connection = SQLOperations.getConnection();
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/master
 =======
 
 
@@ -41,16 +50,22 @@ Connection connection;
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String query= request.getParameter("query");
 <<<<<<< HEAD
+<<<<<<< HEAD
 		ResultSet rs = SQLOperations.searchItemDatabase(query, connection);
 		request.setAttribute("recordStudent",rs);
 		request.setAttribute("query",query);
 		
 		getServletContext().getRequestDispatcher("/listItem.jsp").forward(request, response);
 =======
+=======
+>>>>>>> origin/master
 		ResultSet rs = SQLOperations.searchItemsDatabase(query, connection);
 		request.setAttribute("recordStudent",rs);
 		request.setAttribute("query",query);
 		getServletContext().getRequestDispatcher("/listItems.jsp").forward(request, response);
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
 >>>>>>> origin/master
 	}
 

@@ -58,6 +58,7 @@ text-shadow:   none;
 <title>List of Items</title>
 </head>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <body bgcolor="#DBFFFF"><center>
 <div class="box">
 	<script type="text/javascript">
@@ -100,6 +101,8 @@ text-shadow:   none;
 			<% 
 				while(recordStudent.next()) {	
 =======
+=======
+>>>>>>> origin/master
 <body bgcolor="#DBFFFF">
 	<center>
 		<div class="box">
@@ -120,6 +123,9 @@ text-shadow:   none;
 				if (request.getParameter("query") != null) {
 					query = (String) request.getParameter("query");
 				}
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
 >>>>>>> origin/master
 			%>
 

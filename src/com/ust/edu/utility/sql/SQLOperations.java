@@ -300,7 +300,12 @@ public class SQLOperations implements SQLCommands {
 		
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	public static ResultSet searchItemDatabase(String search,Connection connection){
+=======
+	
+	public static ResultSet searchItemsDatabase(String search,Connection connection){
+>>>>>>> origin/master
 =======
 	
 	public static ResultSet searchItemsDatabase(String search,Connection connection){
@@ -312,17 +317,23 @@ public class SQLOperations implements SQLCommands {
 			PreparedStatement pstmt = connection.prepareStatement(query);
 			pstmt.setString(1,"%"+search+"%");
 <<<<<<< HEAD
+<<<<<<< HEAD
 			
 			rs = pstmt.executeQuery();
 		} catch (SQLException e) {
 			System.out.print("SearchItemDatabase error-");
 =======
+=======
+>>>>>>> origin/master
 			pstmt.setString(2,"%"+search+"%");
 			pstmt.setString(3,"%"+search+"%");
 			
 			rs = pstmt.executeQuery();
 		} catch (SQLException e) {
 			System.out.print("SearchItemssDatabase error-");
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
 >>>>>>> origin/master
 			e.printStackTrace();
 		}

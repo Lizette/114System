@@ -37,7 +37,10 @@ input {
 	position:relative;
 	height: 300px;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/master
 }
 .btn {
  background:    #fafafa;
@@ -50,6 +53,9 @@ padding:       8px 20px;
 font-size:    20px;
 text-align:    center;
 text-shadow:   none;
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
 >>>>>>> origin/master
 }
 </style>
@@ -113,7 +119,12 @@ text-shadow:   none;
 								 If ever there is a damage, it should be reported immediately to the instructor</li>
 							  	<li>All equipment/materials must be returned within or after the laboratory hour of your class.</li>
 <<<<<<< HEAD
+<<<<<<< HEAD
 							  	<li> All users must observe and follow the Rules and Regulations in borrowing equipments in Chemical Engineering Laboratory</li>
+=======
+							  	<li> All users must observe and follow the Rules and Regulations in borrowing equipment from the
+							  	 Chemical Engineering Laboratory</li>
+>>>>>>> origin/master
 =======
 							  	<li> All users must observe and follow the Rules and Regulations in borrowing equipment from the
 							  	 Chemical Engineering Laboratory</li>
@@ -168,9 +179,15 @@ text-shadow:   none;
 								%>
 							</div>
 <<<<<<< HEAD
+<<<<<<< HEAD
 							<input type="submit" value="Borrow" class="btn btn-primary">
 						</div>
 						
+=======
+							<input type="submit" value="Borrow" class="btn">
+						</div>
+					</form>
+>>>>>>> origin/master
 =======
 							<input type="submit" value="Borrow" class="btn">
 						</div>
@@ -240,8 +257,12 @@ text-shadow:   none;
 				</div> -->
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 				</div>
 			</div>
+=======
+
+>>>>>>> origin/master
 =======
 
 >>>>>>> origin/master

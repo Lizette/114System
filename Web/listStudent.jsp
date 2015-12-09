@@ -99,8 +99,13 @@ text-shadow:   none;
 
 <form action="searchstudent.html">
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<p>SEARCH<input type="text" name="query" value="<%=query%>" class="form-control"></p>
 	<input type="submit" value="submit" class= "btn btn-primary"/>
+=======
+	<b>SEARCH</b> <input type="text" name="query" value="<%=query%>">
+	<input type="submit" value="Search" class="srch"/>
+>>>>>>> origin/master
 =======
 	<b>SEARCH</b> <input type="text" name="query" value="<%=query%>">
 	<input type="submit" value="Search" class="srch"/>
