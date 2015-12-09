@@ -23,12 +23,7 @@ public class BorrowFormContinuationServlet extends HttpServlet {
 
 	public void init(/* ServletConfig config */) throws ServletException {
 		connection = SQLOperations.getConnection();
-		if (connection != null) {
-			getServletContext().setAttribute("dbConnection", connection);
-			System.out.println("CONNECTED!");
-		} else {
-			System.err.println("connection is NULL.");
-		}
+		
 	}
 
 	protected void doGet(HttpServletRequest request,

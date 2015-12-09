@@ -12,7 +12,8 @@
  body {
   font-family: 'Arial', sans-serif;
   margin: 20px;
-  background-image: url('lab.jpg');
+  background-image: url('lab.jpg'); 
+	/*background-image: url('0001.png');*/
   color: #fff;
   }
   

@@ -8,9 +8,10 @@
 	media="screen" />
 <style>
 body {
-	font-family: 'Arial', sans-serif;
+	font-family: Courier New;
 	margin: 20px;
-	background-image: url('lab.jpg');
+	  background-image: url('lab.jpg'); 
+	/*background-image: url('0001.png');*/
 	color: #fff;
 }
 
@@ -26,6 +27,18 @@ input {
 	padding: 30px;
 	background-color: rgba(0, 0, 0, 0.8);
 	margin-top: 5%;
+}
+.btn {
+ background:    #fafafa;
+border:        2px solid #73081a;
+border-radius: 5px;
+box-shadow:    1px 1px 0 0 #444;
+color:         #000;
+display:       inline-block;
+padding:       8px 20px;
+font-size:    20px;
+text-align:    center;
+text-shadow:   none;
 }
 </style>
 <title>Tables</title>
@@ -49,7 +62,7 @@ input {
 			<form action="addItem.jsp" method="post">
 				<div class="row">
 					<div class="col-md-12">
-						<input type="submit" value="Add Equipment" class="btn btn-primary">
+						<input type="submit" value="Add Equipment" class="btn">
 					</div>
 				</div>
 			</form>
@@ -58,7 +71,7 @@ input {
 			<form action="listItems.html" method="post">
 				<div class="row">
 					<div class="col-md-12">
-						<input type="submit" value="View all List" class="btn btn-primary">
+						<input type="submit" value="View All Items" class="btn">
 					</div>
 				</div>
 			</form>
@@ -67,7 +80,7 @@ input {
 			<form action="borrowform.html" method="post">
 				<div class="row">
 					<div class="col-md-12">
-						<input type="submit" value="Borrow Form" class="btn btn-primary">
+						<input type="submit" value="Borrow Form" class="btn">
 					</div>
 				</div>
 			</form>
@@ -75,7 +88,7 @@ input {
 			 <form action="liststudent.html" method="post">
 				<div class="row">
 					<div class="col-md-12">
-						<input type="submit" value="View Borrowed Items" class="btn btn-primary">
+						<input type="submit" value="View Borrowed Items" class="btn">
 					</div> 
 				</div>
 			</form>

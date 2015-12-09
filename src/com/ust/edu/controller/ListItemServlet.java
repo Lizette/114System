@@ -20,16 +20,11 @@ public class ListItemServlet extends HttpServlet {
 	Connection connection;
 
 	
-	public void init(ServletConfig config) throws ServletException {
-		super.init(config);
+	public void init() throws ServletException {
+		
 			connection = SQLOperations.getConnection();
 		
-		if (connection != null) {
-			getServletContext().setAttribute("dbConnection", connection);
-			System.out.println("connection is READY.");
-		} else {
-			System.err.println("connection is NULL.");
-		}
+		
 	}
 
 	

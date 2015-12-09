@@ -22,8 +22,7 @@ public class UpdateItemsServlet extends HttpServlet {
 	private Connection connection;
 	
 	public void init() throws ServletException {
-		connection = (Connection) 
-				getServletContext().getAttribute("dbConnection");
+		connection = SQLOperations.getConnection();
 	}
 
 	

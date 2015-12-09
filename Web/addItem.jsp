@@ -7,9 +7,10 @@
 <link rel="stylesheet" href="bootstrap.css" type="text/css" media="screen" />
 <style>
  body {
-  font-family: 'Arial', sans-serif;
+  font-family: Courier New;
   margin: 20px;
-  background-image: url('lab.jpg');
+  background-image: url('lab.jpg'); 
+	/*background-image: url('0001.png');*/
   color: #fff;
   }
   
@@ -26,6 +27,18 @@
   	background-color: rgba(0,0,0,0.8);
   	margin-top: 5%;
   }
+.btn {
+ background:    #fafafa;
+border:        2px solid #73081a;
+border-radius: 5px;
+box-shadow:    1px 1px 0 0 #444;
+color:         #000;
+display:       inline-block;
+padding:       8px 20px;
+font-size:    20px;
+text-align:    center;
+text-shadow:   none;
+}
 </style>
 <title>Add</title>
 </head>
@@ -48,9 +61,9 @@
 				</div>
 				<div class="row">
 					<div class="col-md-5"><label>Enter Quantity of Item: </label></div>
-					<div class="col-md-6"><input type="number" name="quantity" class="form-control"></div>
+					<div class="col-md-6"><input type="number" min="1" name="quantity" class="form-control"></div>
 				</div>
-				<input type="submit" value="Add" class="btn btn-primary">
+				<input type="submit" value="Add" class="btn">
 			</form>
 			<br><br>
 			
@@ -59,7 +72,7 @@
 			<center> <form action="index.jsp" method="post">
 				<div class="row">
 				<div class="col-md-12">
-				<input type="submit" value="Click here to go back to Home Page" class="btn btn-primary">
+				<input type="submit" value="Click here to go back to Home Page" class="btn">
 		 		</div>
 				</div>
 			</form></center>
