@@ -29,17 +29,7 @@ public interface SQLCommands {
 			+ "OR itemId like ?"
 			+ "or itemBorrowed like ?";
 	
-<<<<<<< HEAD
-<<<<<<< HEAD
-	String SEARCH_ITEMS_QUERY="select * from Item where Equipments like ?";
-=======
 	String SEARCH_ITEMS_QUERY="select * from item where id like ?"
 			+ "OR equipments like ?"
 			+ "OR totalnum like ?";
->>>>>>> origin/master
-=======
-	String SEARCH_ITEMS_QUERY="select * from item where id like ?"
-			+ "OR equipments like ?"
-			+ "OR totalnum like ?";
->>>>>>> origin/master
 }

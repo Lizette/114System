@@ -57,52 +57,6 @@ text-shadow:   none;
 </style>
 <title>List of Items</title>
 </head>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<body bgcolor="#DBFFFF"><center>
-<div class="box">
-	<script type="text/javascript">
-		document.write ('<p>Current time is: <span id="date-time">', new Date().toLocaleString(), '<\/span>.<\/p>')
-		if (document.getElementById) onload = function () {
-			setInterval ("document.getElementById ('date-time').firstChild.data = new Date().toLocaleString()", 50)
-		}
-	</script>
-	<hr>
-	<!-- SEARCH BAR -->
-<%
-	String query="";
-	if(request.getParameter("query")!=null){
-		query=(String) request.getParameter("query");
-	}
-
-%>
-
-
-<form action="searchitem.html">
-	<p>SEARCH<input type="text" name="query" value="<%=query%>" class="form-control"></p>
-	<input type="submit" value="submit" class= "btn btn-primary"/>
-</form>
-<hr>
-<h2 class="text-center">List of Items</h2>
-<hr>
-	<div class="row">
-		<div class="col-md-12">
-		<!-- TABLE NG LISTAHAN NG LAMAN NG INVENTORY -->
-		<table class="table table-bordered">
-			<tr>
-				<th align="center">ID</th>
-			<th align="center">Equipment</th>
-			<th align="center">TotalNum</th>
-			<th align="center">Edit</th>
-			<th align="center">Delete</th>
-
-			</tr>
-		
-			<% 
-				while(recordStudent.next()) {	
-=======
-=======
->>>>>>> origin/master
 <body bgcolor="#DBFFFF">
 	<center>
 		<div class="box">
@@ -123,10 +77,6 @@ text-shadow:   none;
 				if (request.getParameter("query") != null) {
 					query = (String) request.getParameter("query");
 				}
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
 			%>
 
 			<form action="searchitem.html">

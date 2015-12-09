@@ -18,30 +18,13 @@ import com.ust.edu.utility.sql.SQLOperations;
 @WebServlet("/searchitem.html")
 public class SearchItemServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-<<<<<<< HEAD
-<<<<<<< HEAD
-       
-	Connection connection;
-=======
 Connection connection;
->>>>>>> origin/master
-=======
-Connection connection;
->>>>>>> origin/master
 	
 	public void init() throws ServletException {
 		connection = SQLOperations.getConnection();
 	}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
 
->>>>>>> origin/master
-=======
-
-
->>>>>>> origin/master
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request,response);
 	}
@@ -49,24 +32,10 @@ Connection connection;
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String query= request.getParameter("query");
-<<<<<<< HEAD
-<<<<<<< HEAD
-		ResultSet rs = SQLOperations.searchItemDatabase(query, connection);
-		request.setAttribute("recordStudent",rs);
-		request.setAttribute("query",query);
-		
-		getServletContext().getRequestDispatcher("/listItem.jsp").forward(request, response);
-=======
-=======
->>>>>>> origin/master
 		ResultSet rs = SQLOperations.searchItemsDatabase(query, connection);
 		request.setAttribute("recordStudent",rs);
 		request.setAttribute("query",query);
 		getServletContext().getRequestDispatcher("/listItems.jsp").forward(request, response);
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
 	}
 
 }

@@ -18,8 +18,6 @@
 
 label {
 	padding-top: 8px;
-	display: block;
-	text-align: left;
 }
 
 input {
@@ -36,11 +34,6 @@ input {
 	overflow-y: scroll;
 	position:relative;
 	height: 300px;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> origin/master
 }
 .btn {
  background:    #fafafa;
@@ -53,13 +46,9 @@ padding:       8px 20px;
 font-size:    20px;
 text-align:    center;
 text-shadow:   none;
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
 }
 </style>
-<title>Borrow Form</title>
+<title>Home</title>
 </head>
 <body bgcolor="#DBFFFF">
 	<div class="box">
@@ -118,21 +107,11 @@ text-shadow:   none;
 								<li> Borrowers are advised to check for any defect before returning the equipment.
 								 If ever there is a damage, it should be reported immediately to the instructor</li>
 							  	<li>All equipment/materials must be returned within or after the laboratory hour of your class.</li>
-<<<<<<< HEAD
-<<<<<<< HEAD
-							  	<li> All users must observe and follow the Rules and Regulations in borrowing equipments in Chemical Engineering Laboratory</li>
-=======
 							  	<li> All users must observe and follow the Rules and Regulations in borrowing equipment from the
 							  	 Chemical Engineering Laboratory</li>
->>>>>>> origin/master
-=======
-							  	<li> All users must observe and follow the Rules and Regulations in borrowing equipment from the
-							  	 Chemical Engineering Laboratory</li>
->>>>>>> origin/master
 							</ul>
 							</div>
 						</div>
-					</form>
 				</div>
 				<div class="col-md-5">							
 						<div class="col-md-12 text-center">
@@ -178,21 +157,9 @@ text-shadow:   none;
 									}
 								%>
 							</div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-							<input type="submit" value="Borrow" class="btn btn-primary">
-						</div>
-						
-=======
 							<input type="submit" value="Borrow" class="btn">
 						</div>
 					</form>
->>>>>>> origin/master
-=======
-							<input type="submit" value="Borrow" class="btn">
-						</div>
-					</form>
->>>>>>> origin/master
 					</div>
 				</div>
 					<!--  
@@ -256,16 +223,7 @@ text-shadow:   none;
 					<p>Option 6</p>
 				</div> -->
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-				</div>
-			</div>
-=======
 
->>>>>>> origin/master
-=======
-
->>>>>>> origin/master
 			<center>
 				<form action="index.jsp">
 					<div class="row">
