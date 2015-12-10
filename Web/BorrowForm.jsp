@@ -243,7 +243,7 @@ text-shadow:   none;
 				<form action="index.jsp">
 					<div class="row">
 						<div class="col-md-12">
-							<input type="submit" value="BACK TO HOME" class="btn">
+							<input type="submit" value="Back to home" class="btn">
 											</div>
 						</div>
 					</div>

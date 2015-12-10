@@ -93,6 +93,7 @@ text-shadow:   none;
 				</div>
 			</form>
 			<form action="generateReportForm.jsp" method="post">
+			<br>
 				<div class="row">
 					<div class="col-md-12">
 						<input type="submit" value="Generate report" class="btn">

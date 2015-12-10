@@ -79,7 +79,7 @@ text-shadow:   none;
 			<hr>
 			<form action="index.jsp" method="post">
 				<div class="row">
-						<input type="submit" value="Click here to go back to form" class="btn">
+						<input type="submit" value="Back to home" class="btn">
 				</div>
 			</form>
 		</div>

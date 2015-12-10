@@ -30,6 +30,18 @@
   	background-color: rgba(0,0,0,0.8);
   	margin-top: 5%;
   }
+  .btn {
+ background:    #fafafa;
+border:        2px solid #73081a;
+border-radius: 5px;
+box-shadow:    1px 1px 0 0 #444;
+color:         #000;
+display:       inline-block;
+padding:       8px 20px;
+font-size:    20px;
+text-align:    center;
+text-shadow:   none;
+}
 </style>
 <title>Update</title>
 </head>
@@ -42,7 +54,7 @@
 	}
 </script>
 <hr>
-<h2 class="text-center">Item Updated</h2>
+<h2 class="text-center">Update Item</h2>
 <hr>
 	<form action="updateitems.html" method="post">
 	<div class="row">
@@ -58,8 +70,8 @@
 			<div class="col-md-5"><label> Quantity:</label></div>
 			<div class="col-md-6"><input type="text" size="25" name="quantity" value="${add.quantity}" class="form-control"></div>
 		</div>
-		<input type="hidden" name="Id" value ="${param.id}" class="btn btn-primary">
-		<input type="submit" value="Update item" class="btn btn-primary">
+		<input type="hidden" name="Id" value ="${param.id}" class="btn">
+		<input type="submit" value="Update item" class="btn">
 
 		</div>
 	</div>

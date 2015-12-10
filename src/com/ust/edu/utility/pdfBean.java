@@ -18,7 +18,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 
 public class pdfBean {
-	private static String directory="E://";
+	private static String directory="C://Users/sab/Desktop/";
 	
 	public static void createPdf(ResultSet rs, java.sql.Date date)
 	        throws IOException, DocumentException {
