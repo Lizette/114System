@@ -61,7 +61,7 @@ text-shadow:   none;
 				</div>
 				<div class="row">
 					<div class="col-md-5"><label>Enter Quantity of Item: </label></div>
-					<div class="col-md-6"><input type="number" name="quantity" class="form-control"></div>
+					<div class="col-md-6"><input type="number" min="1" name="quantity" class="form-control"></div>
 				</div>
 				<input type="submit" value="Add" class="btn">
 			</form>

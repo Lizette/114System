@@ -112,7 +112,6 @@ text-shadow:   none;
 							</ul>
 							</div>
 						</div>
-					</form>
 				</div>
 				<div class="col-md-5">							
 						<div class="col-md-12 text-center">
@@ -160,7 +159,7 @@ text-shadow:   none;
 							</div>
 							<input type="submit" value="Borrow" class="btn">
 						</div>
-						
+					</form>
 					</div>
 				</div>
 					<!--  
@@ -224,13 +223,13 @@ text-shadow:   none;
 					<p>Option 6</p>
 				</div> -->
 
-				</div>
-			</div>
+
 			<center>
 				<form action="index.jsp">
 					<div class="row">
 						<div class="col-md-12">
 							<input type="submit" value="BACK TO HOME" class="btn">
+											</div>
 						</div>
 					</div>
 				</form>
